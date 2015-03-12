@@ -6,13 +6,15 @@ Direct3D:
     Vendor:   ATI
     VRAM:     2032 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Work\Roborally\Roborally\first_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Work\Roborally\Roborally\first_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Work\Roborally\Roborally\first_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Work\Roborally\Roborally\first_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.054 seconds
+Platform assembly: C:\Work\Git\RoboRally\Client\Unity\first_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\Unity\first_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Work\Git\RoboRally\Client\Unity\first_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\Unity\first_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Work\Git\RoboRally\Client\Unity\first_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\Unity\first_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.061 seconds
 desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Work\Roborally\Roborally\first_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Work\Git\RoboRally\Client\Unity\first_Data\Managed\System.Core.dll (this message is harmless)
