@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoardBuilder.cs" />
-     <Compile Include="Assets\Scripts\Moving.cs" />
+     <Compile Include="Assets\Scripts\MoveCamera.cs" />
+     <Compile Include="Assets\Scripts\MoveRobot.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
