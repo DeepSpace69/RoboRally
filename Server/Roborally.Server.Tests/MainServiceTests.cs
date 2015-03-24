@@ -10,6 +10,7 @@ namespace Roborally.Server.Tests
     {
         private MainService mainService;
 
+        [TestInitialize]
         public void Init()
         {
             this.mainService = new MainService();

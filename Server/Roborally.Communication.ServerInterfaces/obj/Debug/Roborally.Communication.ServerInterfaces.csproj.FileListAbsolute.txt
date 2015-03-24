@@ -2,3 +2,8 @@ C:\work\fun\Roborally\Roborally.Communication.ServerInterfaces\bin\Debug\Roboral
 C:\work\fun\Roborally\Roborally.Communication.ServerInterfaces\bin\Debug\Roborally.Communication.ServerInterfaces.pdb
 C:\work\fun\Roborally\Roborally.Communication.ServerInterfaces\obj\Debug\Roborally.Communication.ServerInterfaces.dll
 C:\work\fun\Roborally\Roborally.Communication.ServerInterfaces\obj\Debug\Roborally.Communication.ServerInterfaces.pdb
+D:\Github\RoboRally\Server\Roborally.Communication.ServerInterfaces\bin\Debug\Roborally.Communication.ServerInterfaces.dll
+D:\Github\RoboRally\Server\Roborally.Communication.ServerInterfaces\bin\Debug\Roborally.Communication.ServerInterfaces.pdb
+D:\Github\RoboRally\Server\Roborally.Communication.ServerInterfaces\obj\Debug\Roborally.Communication.ServerInterfaces.csprojResolveAssemblyReference.cache
+D:\Github\RoboRally\Server\Roborally.Communication.ServerInterfaces\obj\Debug\Roborally.Communication.ServerInterfaces.dll
+D:\Github\RoboRally\Server\Roborally.Communication.ServerInterfaces\obj\Debug\Roborally.Communication.ServerInterfaces.pdb

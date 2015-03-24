@@ -2,20 +2,20 @@ Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: AMD Radeon HD 6900 Series (ID=0x6719)
-    Vendor:   ATI
-    VRAM:     2032 MB
+    Renderer: Intel(R) HD Graphics (ID=0x152)
+    Vendor:   Intel
+    VRAM:     128 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Work\Git\RoboRally\Client\Unity\RoborallyClient_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Work\Git\RoboRally\Client\Unity\RoborallyClient_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Work\Git\RoboRally\Client\Unity\RoborallyClient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Work\Git\RoboRally\Client\Unity\RoborallyClient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Work\Git\RoboRally\Client\Unity\RoborallyClient_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Work\Git\RoboRally\Client\Unity\RoborallyClient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.055 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: D:\Github\RoboRally\Client\Unity\RoborallyClient_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Github\RoboRally\Client\Unity\RoborallyClient_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Github\RoboRally\Client\Unity\RoborallyClient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Github\RoboRally\Client\Unity\RoborallyClient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Github\RoboRally\Client\Unity\RoborallyClient_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Github\RoboRally\Client\Unity\RoborallyClient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.044 seconds
+desktop: 1920x1200 59Hz; virtual: 1920x1200 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Work\Git\RoboRally\Client\Unity\RoborallyClient_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Work\Git\RoboRally\Client\Unity\RoborallyClient_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\Github\RoboRally\Client\Unity\RoborallyClient_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Github\RoboRally\Client\Unity\RoborallyClient_Data\Managed\System.dll (this message is harmless)
