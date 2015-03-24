@@ -1,0 +1,7 @@
+C:\work\fun\Roborally\Roborally.Server\bin\Debug\Roborally.Server.dll
+C:\work\fun\Roborally\Roborally.Server\bin\Debug\Roborally.Server.pdb
+C:\work\fun\Roborally\Roborally.Server\bin\Debug\Roborally.Communication.ServerInterfaces.dll
+C:\work\fun\Roborally\Roborally.Server\bin\Debug\Roborally.Communication.ServerInterfaces.pdb
+C:\work\fun\Roborally\Roborally.Server\obj\Debug\Roborally.Server.csprojResolveAssemblyReference.cache
+C:\work\fun\Roborally\Roborally.Server\obj\Debug\Roborally.Server.dll
+C:\work\fun\Roborally\Roborally.Server\obj\Debug\Roborally.Server.pdb

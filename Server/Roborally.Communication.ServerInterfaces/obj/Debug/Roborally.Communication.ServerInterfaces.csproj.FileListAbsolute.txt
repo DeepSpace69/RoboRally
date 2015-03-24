@@ -1,0 +1,4 @@
+C:\work\fun\Roborally\Roborally.Communication.ServerInterfaces\bin\Debug\Roborally.Communication.ServerInterfaces.dll
+C:\work\fun\Roborally\Roborally.Communication.ServerInterfaces\bin\Debug\Roborally.Communication.ServerInterfaces.pdb
+C:\work\fun\Roborally\Roborally.Communication.ServerInterfaces\obj\Debug\Roborally.Communication.ServerInterfaces.dll
+C:\work\fun\Roborally\Roborally.Communication.ServerInterfaces\obj\Debug\Roborally.Communication.ServerInterfaces.pdb
