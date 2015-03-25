@@ -27,6 +27,8 @@ Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "PhotonSocketServer", "Photo
 		AttachLaunchAction = No
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Photon", "Photon", "{3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,5 +98,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
+		{93591782-0DD6-457C-9FD3-AE64DDCEA67E} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
+		{4D90462E-5C0D-4A9B-8240-9278391984A4} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
 	EndGlobalSection
 EndGlobal

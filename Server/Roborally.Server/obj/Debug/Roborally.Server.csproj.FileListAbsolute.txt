@@ -12,3 +12,10 @@ D:\Github\RoboRally\Server\Roborally.Server\bin\Debug\Roborally.Communication.Se
 D:\Github\RoboRally\Server\Roborally.Server\obj\Debug\Roborally.Server.csprojResolveAssemblyReference.cache
 D:\Github\RoboRally\Server\Roborally.Server\obj\Debug\Roborally.Server.dll
 D:\Github\RoboRally\Server\Roborally.Server\obj\Debug\Roborally.Server.pdb
+c:\Work\Git\RoboRally\Server\Roborally.Server\bin\Debug\Roborally.Server.dll
+c:\Work\Git\RoboRally\Server\Roborally.Server\bin\Debug\Roborally.Server.pdb
+c:\Work\Git\RoboRally\Server\Roborally.Server\bin\Debug\Roborally.Communication.ServerInterfaces.dll
+c:\Work\Git\RoboRally\Server\Roborally.Server\bin\Debug\Roborally.Communication.ServerInterfaces.pdb
+c:\Work\Git\RoboRally\Server\Roborally.Server\obj\Debug\Roborally.Server.csprojResolveAssemblyReference.cache
+c:\Work\Git\RoboRally\Server\Roborally.Server\obj\Debug\Roborally.Server.dll
+c:\Work\Git\RoboRally\Server\Roborally.Server\obj\Debug\Roborally.Server.pdb
