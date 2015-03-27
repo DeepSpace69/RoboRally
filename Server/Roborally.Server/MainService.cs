@@ -68,7 +68,7 @@ namespace Roborally.Server
         /// <returns>The <see cref="IUser"/>.</returns>
         public IUser Login(string login, string password)
         {
-            return null;
+            return new User("2", "Vasya");
         }
 
         /// <summary>Gets information about what happens after performing moving robots.</summary>

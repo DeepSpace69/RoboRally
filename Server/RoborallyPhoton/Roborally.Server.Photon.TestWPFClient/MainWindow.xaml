@@ -1,0 +1,10 @@
+﻿<Window x:Class="Roborally.Server.Photon.TestWPFClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Button" Command="{Binding ButtoDelegateCommand}" HorizontalAlignment="Left" Margin="196,113,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,292,0,0" TextWrapping="Wrap" Text="{Binding Client.Status}" VerticalAlignment="Top" Height="18" Width="95"/>
+
+    </Grid>
+</Window>

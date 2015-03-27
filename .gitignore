@@ -1,5 +1,5 @@
-Client/Unity/Library/
-Client/Unity/Temp/
+Client/RoborallyUnityClient/Library/
+Client/RoborallyUnityClient/Temp/
 *.license
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -54,12 +54,3 @@ bld/
 *.psess
 *.vsp
 *.vspx
-
-# NuGet Packages
-*.nupkg
-# The packages folder can be ignored because of Package Restore
-**/packages/*
-# except build/, which is used as an MSBuild target.
-!**/packages/build/
-# Uncomment if necessary however generally it will be regenerated when needed
-#!**/packages/repositories.config

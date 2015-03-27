@@ -3,22 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Communication.ServerInterfaces", "Roborally.Communication.ServerInterfaces\Roborally.Communication.ServerInterfaces.csproj", "{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Communication.ServerInterfaces", "..\Common\Roborally.Communication.ServerInterfaces\Roborally.Communication.ServerInterfaces.csproj", "{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Server", "Roborally.Server\Roborally.Server.csproj", "{BBD89A0D-26BD-4111-BE68-C44CC10C86A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Server.Tests", "Roborally.Server.Tests\Roborally.Server.Tests.csproj", "{C20AA0DF-F8B8-452B-934C-60C3FFD2D55F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Server.Photon", "Roborally.Server.Photon\Roborally.Server.Photon.csproj", "{93591782-0DD6-457C-9FD3-AE64DDCEA67E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Server.Photon", "RoborallyPhoton\Roborally.Server.Photon\Roborally.Server.Photon.csproj", "{93591782-0DD6-457C-9FD3-AE64DDCEA67E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Server.Photon.TestClient", "Roborally.Server.Photon.TestClient\Roborally.Server.Photon.TestClient.csproj", "{4D90462E-5C0D-4A9B-8240-9278391984A4}"
-EndProject
-Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "PhotonSocketServer", "Photon\deploy\bin_Win64\PhotonSocketServer.exe", "{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374}"
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "PhotonSocketServer", "c:\Work\Git\RoboRally\Server\RoborallyPhoton\Photon\deploy\bin_Win64\PhotonSocketServer.exe", "{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374}"
 	ProjectSection(DebuggerProjectSystem) = preProject
 		PortSupplier = 00000000-0000-0000-0000-000000000000
-		Executable = C:\Work\Git\RoboRally\Server\Photon\deploy\bin_Win64\PhotonSocketServer.exe
+		Executable = c:\Work\Git\RoboRally\Server\RoborallyPhoton\Photon\deploy\bin_Win64\PhotonSocketServer.exe
 		RemoteMachine = CHOBITS
-		StartingDirectory = C:\Work\Git\RoboRally\Server\Photon\deploy\bin_Win64
+		StartingDirectory = c:\Work\Git\RoboRally\Server\RoborallyPhoton\Photon\deploy\bin_Win64
 		Arguments = /debug Default /config PhotonServer.config
 		Environment = Default
 		LaunchingEngine = fb0d4648-f776-4980-95f8-bb7f36ebc1ee
@@ -28,6 +26,14 @@ Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "PhotonSocketServer", "Photo
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Photon", "Photon", "{3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Server.Photon.Data", "RoborallyPhoton\Roborally.Server.Photon.Data\Roborally.Server.Photon.Data.csproj", "{6B554CAC-1579-4385-A14B-DB21D3325AFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Server.Photon.TestWPFClient", "RoborallyPhoton\Roborally.Server.Photon.TestWPFClient\Roborally.Server.Photon.TestWPFClient.csproj", "{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Server.Photon.Services", "RoborallyPhoton\Roborally.Server.Photon.Services\Roborally.Server.Photon.Services.csproj", "{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{B068579B-0721-4297-905B-4AF79BC5B1ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,22 +85,42 @@ Global
 		{93591782-0DD6-457C-9FD3-AE64DDCEA67E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{93591782-0DD6-457C-9FD3-AE64DDCEA67E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{93591782-0DD6-457C-9FD3-AE64DDCEA67E}.Release|x64.ActiveCfg = Release|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4D90462E-5C0D-4A9B-8240-9278391984A4}.Release|x64.ActiveCfg = Release|Any CPU
 		{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374}.Debug|Any CPU.ActiveCfg = Debug
 		{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374}.Debug|Mixed Platforms.ActiveCfg = Debug
 		{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374}.Debug|x64.ActiveCfg = Debug
 		{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374}.Release|Any CPU.ActiveCfg = Debug
 		{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374}.Release|Mixed Platforms.ActiveCfg = Debug
 		{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374}.Release|x64.ActiveCfg = Debug
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB}.Release|x64.ActiveCfg = Release|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715}.Release|x64.ActiveCfg = Release|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +128,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9C18F6BE-E55A-41BB-BF8D-BDF8B018D374} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
 		{93591782-0DD6-457C-9FD3-AE64DDCEA67E} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
-		{4D90462E-5C0D-4A9B-8240-9278391984A4} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
+		{6B554CAC-1579-4385-A14B-DB21D3325AFB} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
+		{775049B7-BB5E-4E5A-A4A4-2B1FB88DA715} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
+		{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971} = {3B717FF4-CF8D-4AF7-A54C-2AD84ADDC036}
+		{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B} = {B068579B-0721-4297-905B-4AF79BC5B1ED}
 	EndGlobalSection
 EndGlobal
