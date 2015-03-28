@@ -88,6 +88,12 @@
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
     </Reference>
+    <Reference Include="Roborally.Communication.Data">
+      <HintPath>Assets\RoborallyCommons\Roborally.Communication.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Roborally.Communication.ServerInterfaces">
+      <HintPath>Assets\RoborallyCommons\Roborally.Communication.ServerInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Assets\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>

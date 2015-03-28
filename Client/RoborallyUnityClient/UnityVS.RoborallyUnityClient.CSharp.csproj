@@ -55,6 +55,12 @@
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
     </Reference>
+    <Reference Include="Roborally.Communication.Data">
+      <HintPath>Assets\RoborallyCommons\Roborally.Communication.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Roborally.Communication.ServerInterfaces">
+      <HintPath>Assets\RoborallyCommons\Roborally.Communication.ServerInterfaces.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityVS.RoborallyUnityClient.CSharp.Plugins.csproj">
@@ -171,8 +177,11 @@
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SmoothSyncMovement.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
+    <Compile Include="Assets\RotationScript.cs" />
     <Compile Include="Assets\Scripts\BoardBuilder.cs" />
+    <Compile Include="Assets\Scripts\MenuSceneScript.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\MenuServices.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\MoveRobot.cs" />
     <Compile Include="Assets\Scripts\PhotonServer.cs" />

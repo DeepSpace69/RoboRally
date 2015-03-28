@@ -7,8 +7,6 @@ public class MenuScript : MonoBehaviour
     public InputField LoginInputField;
     public InputField PasswordInputField;
 
-
-
     // Use this for initialization
     void Start()
     {
@@ -18,7 +16,7 @@ public class MenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PhotonServer.Instance.Update(Debug.Log);        
+        PhotonServer.Instance.Update();
     }
 
     void OnGUI()
@@ -36,6 +34,16 @@ public class MenuScript : MonoBehaviour
     {
         var login = this.LoginInputField.text;
         var pass = this.PasswordInputField.text;
+        PhotonServer.Instance.LoginCompleted += this.OnLoginCompleted;
         PhotonServer.Instance.Login(login, pass);
+    }
+
+    void OnLoginCompleted(bool isOk)
+    {
+        PhotonServer.Instance.LoginCompleted -= this.OnLoginCompleted;
+        if (isOk)
+        {
+            Application.LoadLevelAsync("MenuScene");
+        }
     }
 }

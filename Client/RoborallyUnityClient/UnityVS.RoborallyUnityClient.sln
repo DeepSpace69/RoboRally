@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.RoborallyUnityClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.RoborallyUnityClient.CSharp.Editor", "UnityVS.RoborallyUnityClient.CSharp.Editor.csproj", "{ABBC787C-DCD8-F4AD-1111-BCA066201C2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Communication.Data", "..\..\Common\Roborally.Communication.Data\Roborally.Communication.Data.csproj", "{8F0480CB-C2D8-4EAB-B7EA-88A9903661F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roborally.Communication.ServerInterfaces", "..\..\Common\Roborally.Communication.ServerInterfaces\Roborally.Communication.ServerInterfaces.csproj", "{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{ABBC787C-DCD8-F4AD-1111-BCA066201C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABBC787C-DCD8-F4AD-1111-BCA066201C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABBC787C-DCD8-F4AD-1111-BCA066201C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0480CB-C2D8-4EAB-B7EA-88A9903661F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0480CB-C2D8-4EAB-B7EA-88A9903661F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0480CB-C2D8-4EAB-B7EA-88A9903661F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0480CB-C2D8-4EAB-B7EA-88A9903661F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

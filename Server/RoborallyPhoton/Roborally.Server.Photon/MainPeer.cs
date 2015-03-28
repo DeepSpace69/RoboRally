@@ -1,18 +1,22 @@
-using System;
-using Photon.SocketServer;
-using PhotonHostRuntimeInterfaces;
-using Roborally.Communication.ServerInterfaces;
-using Roborally.Server.Photon.Data;
-using Roborally.Server.Photon.Services;
-
 namespace Roborally.Server.Photon
 {
-    public class MainPeer : PeerBase
-    {
-        private readonly IMainService mainService;
+    using System;
+    using global::Photon.SocketServer;
+    using PhotonHostRuntimeInterfaces;
+    using Roborally.Communication.ServerInterfaces;
 
+
+    /// <summary>The main peer.</summary>
+    public partial class MainPeer : PeerBase
+    {
         private static readonly object syncRoot = new object();
 
+        private readonly IMainService mainService;
+
+        /// <summary>Initializes a new instance of the <see cref="MainPeer"/> class.</summary>
+        /// <param name="protocol">The protocol.</param>
+        /// <param name="unmanagedPeer">The unmanaged peer.</param>
+        /// <param name="mainService">The main service.</param>
         public MainPeer(IRpcProtocol protocol, IPhotonPeer unmanagedPeer, IMainService mainService)
             : base(protocol, unmanagedPeer)
         {
@@ -25,24 +29,14 @@ namespace Roborally.Server.Photon
 
         private static event Action<MainPeer, EventData, SendParameters> BroadcastMessage;
 
+        /// <summary>The on disconnect.</summary>
+        /// <param name="disconnectCode">The disconnect code.</param>
+        /// <param name="reasonDetail">The reason detail.</param>
         protected override void OnDisconnect(DisconnectReason disconnectCode, string reasonDetail)
         {
             lock (syncRoot)
             {
                 BroadcastMessage -= this.OnBroadcastMessage;
-            }
-        }
-
-        protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
-        {
-            var incoming = new LoginParameters(this.Protocol, operationRequest);
-
-            if (incoming.IsValid)
-            {
-                var user = mainService.Login(incoming.Login, incoming.Password);
-                var photonUser = new PhotonUser(user);
-                var response = new OperationResponse(operationRequest.OperationCode, photonUser);
-                this.SendOperationResponse(response, sendParameters);
             }
         }
 

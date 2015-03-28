@@ -16,34 +16,11 @@ Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyCl
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.056 seconds
+Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.Data.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.Data.dll into Unity Child Domain
+Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.ServerInterfaces.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.ServerInterfaces.dll into Unity Child Domain
+- Completed reload, in  0.061 seconds
 desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initialized touch support.
-Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\System.dll (this message is harmless)
-Connect3/27/2015 9:52:10 AM
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Ping3/27/2015 9:52:10 AM
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Ping3/27/2015 9:52:13 AM
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Ping3/27/2015 9:52:16 AM
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Ping3/27/2015 9:52:19 AM
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Ping3/27/2015 9:52:22 AM
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-

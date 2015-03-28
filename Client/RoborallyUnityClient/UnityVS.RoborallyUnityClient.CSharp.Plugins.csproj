@@ -55,6 +55,12 @@
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
     </Reference>
+    <Reference Include="Roborally.Communication.Data">
+      <HintPath>Assets\RoborallyCommons\Roborally.Communication.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Roborally.Communication.ServerInterfaces">
+      <HintPath>Assets\RoborallyCommons\Roborally.Communication.ServerInterfaces.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\ChatApi\ChatChannel.cs" />

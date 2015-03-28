@@ -34,6 +34,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EmitMapper">
+      <HintPath>..\..\packages\EmitMapper.1.0.0\lib\EmitMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Photon.SocketServer, Version=3.4.28.8340, Culture=neutral, PublicKeyToken=48c2fa3b6988090e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\CommonLibs\Photon.SocketServer.dll</HintPath>
@@ -52,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OperationsMapper.cs">
+      <DependentUpon>MainPeer.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainPeer.cs" />
     <Compile Include="RoborallyHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,18 +67,17 @@
       <Project>{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}</Project>
       <Name>Roborally.Communication.ServerInterfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Roborally.Server.Photon.Data\Roborally.Server.Photon.Data.csproj">
-      <Project>{6b554cac-1579-4385-a14b-db21d3325afb}</Project>
-      <Name>Roborally.Server.Photon.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Roborally.Server.Photon.Services\Roborally.Server.Photon.Services.csproj">
-      <Project>{94D3EC72-F90A-4236-8B3F-D5C6DD1C8971}</Project>
-      <Name>Roborally.Server.Photon.Services</Name>
+    <ProjectReference Include="..\..\..\Common\Roborally.Communication.Data\Roborally.Communication.Data.csproj">
+      <Project>{8f0480cb-c2d8-4eab-b7ea-88a9903661f4}</Project>
+      <Name>Roborally.Communication.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Roborally.Server\Roborally.Server.csproj">
       <Project>{BBD89A0D-26BD-4111-BE68-C44CC10C86A6}</Project>
       <Name>Roborally.Server</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
