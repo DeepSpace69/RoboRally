@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="MainService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotModel.cs" />
+    <Compile Include="RobotModelsDatabase.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

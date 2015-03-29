@@ -6,7 +6,8 @@ namespace Roborally.Server
 {
     /// <summary>The main service.</summary>
     public class MainService : IMainService
-    {
+    {        
+
         /// <summary>Gets information about what happens after performing actions of board objects.</summary>
         /// <param name="robots">The robots with new position and status.</param>
         public void BoardActions(ICollection<IGameRobot> robots)
@@ -59,7 +60,7 @@ namespace Roborally.Server
         /// <returns>Available robots models.</returns>
         public ICollection<IRobotsModel> GetRobotsModels()
         {
-            return null;
+            return RobotModelsDatabase.Instance.GetAllRobotModels();
         }
 
         /// <summary>Login into game.</summary>
@@ -70,7 +71,7 @@ namespace Roborally.Server
         {
             if (login == "1" && password == "1")
             {
-                return new User("2", "Vasya");
+                return new User("1", "Vasya");
             }
             else
             {

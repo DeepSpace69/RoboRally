@@ -21,7 +21,7 @@ namespace Roborally.Server.Tests
         {
             var user = mainService.Login("1", "1");
 
-            Assert.AreEqual("1", user.Name);
+            Assert.AreEqual("1", user.ID);
         }
 
         [TestMethod]
