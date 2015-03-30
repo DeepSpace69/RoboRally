@@ -25,3 +25,12 @@ C:\Work\Git\RoboRally\Server\Roborally.Server.Tests\bin\Debug\Roborally.Server.p
 C:\Work\Git\RoboRally\Server\Roborally.Server.Tests\obj\Debug\Roborally.Server.Tests.csprojResolveAssemblyReference.cache
 C:\Work\Git\RoboRally\Server\Roborally.Server.Tests\obj\Debug\Roborally.Server.Tests.dll
 C:\Work\Git\RoboRally\Server\Roborally.Server.Tests\obj\Debug\Roborally.Server.Tests.pdb
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\bin\Debug\Roborally.Server.Tests.dll
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\bin\Debug\Roborally.Server.Tests.pdb
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\bin\Debug\Roborally.Communication.ServerInterfaces.dll
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\bin\Debug\Roborally.Server.dll
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\bin\Debug\Roborally.Communication.ServerInterfaces.pdb
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\bin\Debug\Roborally.Server.pdb
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\obj\Debug\Roborally.Server.Tests.csprojResolveAssemblyReference.cache
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\obj\Debug\Roborally.Server.Tests.dll
+D:\Git2\RoboRally\Server\Roborally.Server.Tests\obj\Debug\Roborally.Server.Tests.pdb
