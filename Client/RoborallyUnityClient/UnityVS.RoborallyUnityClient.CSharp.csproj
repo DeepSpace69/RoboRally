@@ -177,13 +177,15 @@
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SmoothSyncMovement.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
     <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
-    <Compile Include="Assets\RotationScript.cs" />
-    <Compile Include="Assets\Scripts\BoardBuilder.cs" />
-    <Compile Include="Assets\Scripts\MenuSceneScript.cs" />
-    <Compile Include="Assets\Scripts\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\MainBoard\BoardBuilder.cs" />
+    <Compile Include="Assets\Scripts\MainBoard\MoveCamera.cs" />
+    <Compile Include="Assets\Scripts\MainBoard\MoveRobot.cs" />
+    <Compile Include="Assets\Scripts\Menu\CreateRobotMain.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuSceneScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\ModelSelection.cs" />
+    <Compile Include="Assets\Scripts\Menu\RotationScript.cs" />
     <Compile Include="Assets\Scripts\MenuServices.cs" />
-    <Compile Include="Assets\Scripts\MoveCamera.cs" />
-    <Compile Include="Assets\Scripts\MoveRobot.cs" />
     <Compile Include="Assets\Scripts\PhotonServer.cs" />
   </ItemGroup>
   <ItemGroup>

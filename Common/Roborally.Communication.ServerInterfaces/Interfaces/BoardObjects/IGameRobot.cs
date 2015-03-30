@@ -23,6 +23,11 @@ namespace Roborally.Communication.ServerInterfaces
         /// <summary>Gets the robots model.</summary>
         IRobotsModel RobotsModel { get; }
 
+        /// <summary>
+        /// Gets name of robots
+        /// </summary>
+        string Name { get; }
+
         #endregion
     }
 }

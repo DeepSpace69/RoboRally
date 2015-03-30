@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="MainServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestRegister.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Roborally.Communication.ServerInterfaces\Roborally.Communication.ServerInterfaces.csproj">

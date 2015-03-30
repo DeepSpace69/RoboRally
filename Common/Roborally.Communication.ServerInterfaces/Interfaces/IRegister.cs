@@ -5,6 +5,11 @@ namespace Roborally.Communication.ServerInterfaces
     {
         #region Public Properties
 
+        /// <summary>
+        /// Register identifier (number)
+        /// </summary>
+        string ID { get; }
+
         /// <summary>Gets the content.</summary>
         IOrderCard Content { get; }
 
