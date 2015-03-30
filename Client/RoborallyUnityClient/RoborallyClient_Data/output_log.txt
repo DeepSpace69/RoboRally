@@ -20,22 +20,16 @@ Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyCl
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.Data.dll into Unity Child Domain
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.ServerInterfaces.dll (this message is harmless)
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.ServerInterfaces.dll into Unity Child Domain
-- Completed reload, in  0.084 seconds
-desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
+- Completed reload, in  0.227 seconds
+desktop: 1440x900 60Hz; virtual: 3360x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\System.dll (this message is harmless)
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.478170 ms
+UnloadTime: 2.657046 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 311.
-Total: 0.280795 ms (FindLiveObjects: 0.016440 ms CreateObjectMapping: 0.022358 ms MarkObjects: 0.237394 ms  DeleteObjects: 0.003945 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.482021 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 350.
-Total: 0.324197 ms (FindLiveObjects: 0.029920 ms CreateObjectMapping: 0.019728 ms MarkObjects: 0.266986 ms  DeleteObjects: 0.006904 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 311.
+Total: 0.321239 ms (FindLiveObjects: 0.030578 ms CreateObjectMapping: 0.024660 ms MarkObjects: 0.256136 ms  DeleteObjects: 0.009206 ms)
 

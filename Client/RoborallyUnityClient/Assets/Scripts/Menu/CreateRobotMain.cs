@@ -4,7 +4,7 @@ using System.Collections;
 public class CreateRobotMain : MonoBehaviour
 {
 
-    public GameObject RobotModel1;
+    public static GameObject SelectedRobot;
 
     // Use this for initialization
     void Start()
@@ -21,5 +21,10 @@ public class CreateRobotMain : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void CreateRobot()
+    {
+        
     }
 }
