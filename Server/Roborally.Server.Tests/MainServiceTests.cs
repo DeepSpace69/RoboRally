@@ -4,6 +4,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Roborally.Server.Tests
 {
+    using System;
+
     using Roborally.Communication.ServerInterfaces;
 
     [TestClass]
@@ -16,6 +18,8 @@ namespace Roborally.Server.Tests
         {
             this.mainService = new MainService();
         }
+
+        #region MenuTests
 
         [TestMethod]
         public void Login_ExistingUser_Success()
@@ -56,6 +60,8 @@ namespace Roborally.Server.Tests
             Assert.IsTrue(mapsCollection.Any(p => p.Id == 1));
         }
 
+        #endregion
+
         [TestMethod]
         public void Play_WithNewCreatedRobot_GameStarted()
         {
@@ -66,8 +72,8 @@ namespace Roborally.Server.Tests
             ////  |_|R|_|
             ////
             ////
+
             this.SetupGame();
-            this.mainService.Play(1, 1, 0);
 
             var gameInfo = this.mainService.GetCurrentGameInfo();
 
@@ -110,55 +116,99 @@ namespace Roborally.Server.Tests
         }
 
         [TestMethod]
-        public void GetCards_AllCards()
+        public void GetCards_AllCards_NineCardsWithEnergy()
         {
             this.SetupGame();
-            this.mainService.Play(1, 1, 0);
             var cards = this.mainService.GetCards();
 
             Assert.AreEqual(9, cards.Count);
             Assert.IsTrue(cards.All(p => p.Energy > 0 && p.Energy < 1000));
+            Assert.IsTrue(cards.All(p => p.Type != MoveDirectionEnum.None));
+        }
+
+        #region SetupRegisters
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void SetupRegisters_SameCardInSeveralRegisters_Error()
+        {
+            this.SetupGame();
+            var registers = this.mainService.GetCurrentGameInfo().Registers.ToList();
+            var cards = this.mainService.GetCards().ToList();
+
+            for (int i = 0; i < registers.Count; i++)
+            {
+                registers[i].Content = cards[i];
+            }
+
+            registers[2].Content = cards[1];
+
+            this.mainService.SetupRegisters(registers);
         }
 
         [TestMethod]
-        public void SetRegister()
+        [ExpectedException(typeof(Exception))]
+        public void SetupRegisters_NotAllRegistersAreFilled_Error()
         {
             this.SetupGame();
-            this.mainService.Play(1, 1, 0);
-            var cards = this.mainService.GetCards();
+            var registers = this.mainService.GetCurrentGameInfo().Registers.ToList();
+            var cards = this.mainService.GetCards().ToList();
 
-            var register = new TestRegister();
+            for (int i = 0; i < registers.Count; i++)
+            {
+                registers[i].Content = cards[i];
+            }
+
+            registers[2].Content = null;
+
+            this.mainService.SetupRegisters(registers);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void SetupRegisters_SomeRegisterWithFakeCard_Error()
+        {
+            this.SetupGame();
+            var registers = this.mainService.GetCurrentGameInfo().Registers.ToList();
+            var cards = this.mainService.GetCards().ToList();
+
+            for (int i = 0; i < registers.Count; i++)
+            {
+                registers[i].Content = cards[i];
+            }
+
+            registers[3].Content = new TestCard()
+                                       {
+                                           Energy = 900,
+                                           ID = "23",
+                                           Speed = 1,
+                                           Type = MoveDirectionEnum.MoveForward
+                                       };
+
+            this.mainService.SetupRegisters(registers);
         }
 
         [TestMethod]
         public void SetupRegisters_MakeMove()
         {
             this.SetupGame();
-            this.mainService.Play(1, 1, 0);
-            var cards = this.mainService.GetCards();
-            var registers = this.mainService.GetCurrentGameInfo().Registers;
-            var moveForvardCard = cards.FirstOrDefault(p => p.Type == MoveDirectionEnum.MoveForward);
+            var cards = this.mainService.GetCards().ToList();
+            var registers = this.mainService.GetCurrentGameInfo().Registers.ToList();
 
-            if (moveForvardCard != null)
+            for (int i = 0; i < registers.Count; i++)
             {
-                Assert.IsTrue(moveForvardCard.Speed > 0 && moveForvardCard.Speed < 3);
-                this.mainService.SetupRegisters(
-                    new[] { new TestRegister() { Content = moveForvardCard, ID = registers.First().ID } });
-
-                var newRobotPosition = this.mainService.GetCurrentGameInfo().GameRobots.FirstOrDefault().Position;
-                
-                //robot moves forward from (1,2) to (1,1) or (1,0) regarding to speed
-                Assert.AreEqual(2 - moveForvardCard.Speed, newRobotPosition.Y);
+                registers[i].Content = cards[i];
             }
+
         }
 
-
-
+        #endregion
 
         private void SetupGame()
         {
             this.mainService.Login("1", "1");
             this.mainService.CreateRobot(1, "TestRobot");
+            this.mainService.Play(1, 1, 0);
         }
     }
 }

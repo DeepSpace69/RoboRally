@@ -51,8 +51,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MainServiceTests.cs" />
+    <Compile Include="MainServiceTests.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCard.cs" />
     <Compile Include="TestRegister.cs" />
   </ItemGroup>
   <ItemGroup>

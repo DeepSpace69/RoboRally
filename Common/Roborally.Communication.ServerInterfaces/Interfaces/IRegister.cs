@@ -11,7 +11,7 @@ namespace Roborally.Communication.ServerInterfaces
         string ID { get; }
 
         /// <summary>Gets the content.</summary>
-        IOrderCard Content { get; }
+        IOrderCard Content { get; set; }
 
         /// <summary>Gets a value indicating whether is available.</summary>
         bool IsAvailable { get; }

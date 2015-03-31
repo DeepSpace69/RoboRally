@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}</ProjectGuid>
+	<ProjectGuid>{D8CF3CA3-37D7-E2C1-DC5E-AA1263270478}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -154,11 +154,16 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SmoothSyncMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
-     <Compile Include="Assets\Scripts\BoardBuilder.cs" />
-     <Compile Include="Assets\Scripts\MenuScript.cs" />
-     <Compile Include="Assets\Scripts\MoveCamera.cs" />
-     <Compile Include="Assets\Scripts\MoveRobot.cs" />
-     <Compile Include="Assets\Scripts\PhotonServer.cs" />
+     <Compile Include="Assets\Scripts\MainBoard\BoardBuilder.cs" />
+     <Compile Include="Assets\Scripts\MainBoard\MoveCamera.cs" />
+     <Compile Include="Assets\Scripts\MainBoard\MoveRobot.cs" />
+     <Compile Include="Assets\Scripts\Menu\CreateRobotMain.cs" />
+     <Compile Include="Assets\Scripts\Menu\MenuSceneScript.cs" />
+     <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
+     <Compile Include="Assets\Scripts\Menu\ModelSelection.cs" />
+     <Compile Include="Assets\Scripts\Menu\RotationScript.cs" />
+     <Compile Include="Assets\Scripts\ServerOperations\MenuServices.cs" />
+     <Compile Include="Assets\Scripts\ServerOperations\PhotonServer.cs" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\marcopolo-readme.txt" />
      <None Include="Assets\Plugins\release_history.txt" />
@@ -170,12 +175,18 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Work/Git/RoboRally/Client/Unity/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="Roborally.Communication.Data">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="Roborally.Communication.ServerInterfaces">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.ServerInterfaces.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{2662B409-6332-1E56-D797-C9025C53BDD6}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+      <Project>{79794840-1FEA-CB11-7E85-4C1462BEFD68}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

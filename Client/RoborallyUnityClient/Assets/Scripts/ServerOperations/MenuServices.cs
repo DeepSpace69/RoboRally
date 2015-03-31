@@ -35,4 +35,8 @@ public partial class PhotonServer
             this.Status = "Denied";
         }
     }
+
+    public void CreateRobot()
+    {
+    }
 }
