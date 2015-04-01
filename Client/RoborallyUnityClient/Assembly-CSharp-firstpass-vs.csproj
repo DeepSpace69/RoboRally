@@ -75,6 +75,15 @@
  <Reference Include="Roborally.Communication.ServerInterfaces">
  <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.ServerInterfaces.dll</HintPath>
  </Reference>
+ <Reference Include="eDriven.Audio">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Audio.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Networking">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Core">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Core.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

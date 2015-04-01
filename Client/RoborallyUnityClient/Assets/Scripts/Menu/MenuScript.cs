@@ -16,7 +16,6 @@ public class MenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PhotonServer.Instance.Update();
     }
 
     void OnGUI()
@@ -42,8 +41,8 @@ public class MenuScript : MonoBehaviour
     {
         PhotonServer.Instance.LoginCompleted -= this.OnLoginCompleted;
         if (isOk)
-        {
-            Application.LoadLevelAsync("MenuScene");
+        {           
+            Application.LoadLevel("MenuScene");
         }
     }
 }

@@ -110,6 +110,15 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="eDriven.Audio">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Audio.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Networking">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Core">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Core.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

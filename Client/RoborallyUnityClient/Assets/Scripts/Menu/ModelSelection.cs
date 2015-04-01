@@ -8,6 +8,10 @@ public class ModelSelection : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if (this.gameObject.tag == "1")
+        {
+            CreateRobotMain.SelectedRobot = this.gameObject;
+        }
     }
 
     // Update is called once per frame
@@ -24,12 +28,12 @@ public class ModelSelection : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (this.gameObject.tag == "Model1")
+        if (this.gameObject.tag == "1")
         {
             this.MovePanel(-108);
         }
 
-        if (this.gameObject.tag == "Model2")
+        if (this.gameObject.tag == "2")
         {
             this.MovePanel(90);
         }

@@ -10,6 +10,8 @@ public partial class PhotonServer
 {
     public event Action<bool> LoginCompleted;
 
+    public event Action CreateRobotCompleted;
+
     /// <summary>The login operation.</summary>
     /// <param name="login">The login.</param>
     /// <param name="password">The password.</param>
@@ -36,7 +38,17 @@ public partial class PhotonServer
         }
     }
 
-    public void CreateRobot()
+    public void CreateRobot(string robotName, string modelId)
     {
+        var createRobotParams = new CreateRobotParameters() { ModelId = modelId, Name = robotName };
+        this.peer.OpCustom(CreateRobotParameters.OperationCode, createRobotParams.ToParameters(), false);
+    }
+
+    private void OnCreateRobotCompleted(OperationResponse operationResponse)
+    {
+        if (this.CreateRobotCompleted != null)
+        {
+            this.CreateRobotCompleted();
+        }
     }
 }

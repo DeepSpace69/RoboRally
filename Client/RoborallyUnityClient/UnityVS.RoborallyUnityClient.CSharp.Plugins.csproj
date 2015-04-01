@@ -61,6 +61,15 @@
     <Reference Include="Roborally.Communication.ServerInterfaces">
       <HintPath>Assets\RoborallyCommons\Roborally.Communication.ServerInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="eDriven.Audio">
+      <HintPath>Assets\root\eDriven\Libs\eDriven.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="eDriven.Core">
+      <HintPath>Assets\root\eDriven\Libs\eDriven.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="eDriven.Networking">
+      <HintPath>Assets\root\eDriven\Libs\eDriven.Networking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\ChatApi\ChatChannel.cs" />

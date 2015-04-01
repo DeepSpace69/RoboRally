@@ -1,5 +1,7 @@
 namespace Roborally.Server.Photon
 {
+    using System;
+
     using EmitMapper;
 
     using global::Photon.SocketServer;
@@ -21,9 +23,20 @@ namespace Roborally.Server.Photon
                 case LoginParameters.OperationCode:
                     this.Login(operationRequest, sendParameters);
                     break;
+                case CreateRobotParameters.OperationCode:
+                    this.CreateRobot(operationRequest, sendParameters);
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void CreateRobot(OperationRequest operationRequest, SendParameters sendParameters)
+        {
+            var incoming = new CreateRobotParameters(operationRequest.Parameters);
+            this.mainService.CreateRobot(Convert.ToInt32(incoming.ModelId), incoming.Name);
+            var response = new OperationResponse(operationRequest.OperationCode);
+            this.SendOperationResponse(response, sendParameters);
         }
 
         private void Login(OperationRequest operationRequest, SendParameters sendParameters)

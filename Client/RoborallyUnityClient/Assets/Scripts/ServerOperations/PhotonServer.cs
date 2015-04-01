@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Timers;
+
+using eDriven.Core.Events;
 
 using ExitGames.Client.Photon;
 using Roborally.Communication.Data.DataContracts;
 
+using Timer = eDriven.Core.Util.Timer;
+
 /// <summary>The photon server.</summary>
 public partial class PhotonServer : IPhotonPeerListener
 {
+    Timer connectTimer = new Timer(3, -1);
+
+    Timer updateTimer = new Timer(1, -1);
+
     /// <summary>The instance.</summary>
     private static PhotonServer instance;
 
@@ -27,8 +36,32 @@ public partial class PhotonServer : IPhotonPeerListener
     {
         this.peer = new PhotonPeer(this, ConnectionProtocol.Tcp);
         this.Connect();
-        this.lastConnect = DateTime.Now;
-        this.lastPeerService = DateTime.Now;
+
+
+        this.connectTimer.TickOnStart = true;
+        this.updateTimer.TickOnStart = true;
+
+        this.connectTimer.Tick += connectTimer_Elapsed;
+        this.updateTimer.Tick += updateTimer_Elapsed;
+        this.connectTimer.Start();
+        this.updateTimer.Start();
+    }
+
+    void updateTimer_Elapsed(Event @event)
+    {
+        if (this.peer != null)
+        {
+            this.peer.Service();
+        }
+    }
+
+    void connectTimer_Elapsed(Event @event)
+    {
+        this.connectTimer.Stop();
+        if (!this.isConnected)
+        {
+            this.Connect();
+        }
     }
 
     /// <summary>Gets the instance.</summary>
@@ -65,12 +98,17 @@ public partial class PhotonServer : IPhotonPeerListener
     /// <param name="operationResponse">The operation response.</param>
     public void OnOperationResponse(OperationResponse operationResponse)
     {
+
         switch (operationResponse.OperationCode)
         {
             case LoginParameters.OperationCode:
                 this.OnLoginCompleted(operationResponse);
                 break;
-        }        
+            case CreateRobotParameters.OperationCode:
+                this.OnCreateRobotCompleted(operationResponse);
+                break;
+        }
+
     }
 
     /// <summary>The on status changed.</summary>
@@ -90,6 +128,7 @@ public partial class PhotonServer : IPhotonPeerListener
             case StatusCode.TimeoutDisconnect:
                 this.Status = "Disconnected";
                 this.isConnected = false;
+                this.connectTimer.Start();
                 break;
             default:
                 this.Status = "Unknown";
@@ -103,20 +142,4 @@ public partial class PhotonServer : IPhotonPeerListener
         this.Status = "Connecting...";
         this.peer.Connect("127.0.0.1:4530", "Roborally");
     }
-
-    /// <summary>The update.</summary>
-    public void Update()
-    {
-        if (!this.isConnected && DateTime.Now > this.lastConnect)
-        {
-            this.lastConnect = DateTime.Now.AddSeconds(10);
-            this.Connect();
-        }
-
-        if (this.peer != null && DateTime.Now > this.lastPeerService)
-        {
-            this.lastPeerService = DateTime.Now.AddSeconds(1);
-            this.peer.Service();
-        }
-    }    
 }

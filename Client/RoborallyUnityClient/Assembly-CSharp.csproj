@@ -162,6 +162,7 @@
      <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
      <Compile Include="Assets\Scripts\Menu\ModelSelection.cs" />
      <Compile Include="Assets\Scripts\Menu\RotationScript.cs" />
+     <Compile Include="Assets\Scripts\ServerOperations\GameServices.cs" />
      <Compile Include="Assets\Scripts\ServerOperations\MenuServices.cs" />
      <Compile Include="Assets\Scripts\ServerOperations\PhotonServer.cs" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
@@ -182,6 +183,15 @@
  </Reference>
  <Reference Include="Roborally.Communication.ServerInterfaces">
  <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.ServerInterfaces.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Audio">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Audio.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Networking">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Core">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Core.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

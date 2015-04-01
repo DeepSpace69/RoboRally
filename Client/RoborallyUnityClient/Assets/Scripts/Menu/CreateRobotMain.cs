@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CreateRobotMain : MonoBehaviour
 {
-
     public static GameObject SelectedRobot;
+
+    public InputField RobotNameTextBox;
 
     // Use this for initialization
     void Start()
@@ -25,6 +27,18 @@ public class CreateRobotMain : MonoBehaviour
 
     public void CreateRobot()
     {
-        PhotonServer.Instance.CreateRobot();
+        PhotonServer.Instance.CreateRobotCompleted += OnCreateRobotCompleted;
+        PhotonServer.Instance.CreateRobot(this.RobotNameTextBox.text, SelectedRobot.tag);
+    }
+
+    void OnCreateRobotCompleted()
+    {
+        PhotonServer.Instance.CreateRobotCompleted -= OnCreateRobotCompleted;
+        GoHome();
+    }
+
+    public void GoHome()
+    {
+        Application.LoadLevelAsync("MenuScene");
     }
 }
