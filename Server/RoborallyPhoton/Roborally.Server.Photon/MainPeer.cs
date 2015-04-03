@@ -20,6 +20,9 @@ namespace Roborally.Server.Photon
         public MainPeer(IRpcProtocol protocol, IPhotonPeer unmanagedPeer, IMainService mainService)
             : base(protocol, unmanagedPeer)
         {
+
+
+
             this.mainService = mainService;
             lock (syncRoot)
             {
