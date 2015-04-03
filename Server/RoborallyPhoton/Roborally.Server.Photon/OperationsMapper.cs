@@ -51,7 +51,7 @@ namespace Roborally.Server.Photon
             }
             else
             {
-                photonUser = new PhotonUser() { ID = "0", Name = string.Empty };
+                photonUser = new PhotonUser() { ID = 0, Name = string.Empty };
             }
 
             var response = new OperationResponse(operationRequest.OperationCode, photonUser.ToParameters());

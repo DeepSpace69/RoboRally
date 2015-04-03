@@ -20,7 +20,7 @@
 
         /// <summary>Gets or sets the id.</summary>
         [DataField(Code = 1, IsOptional = false)]
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         /// <summary>Gets or sets the name.</summary>
         [DataField(Code = 2, IsOptional = false)]
