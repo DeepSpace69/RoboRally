@@ -1,7 +1,9 @@
-Server/TestResults/
 Client/RoborallyUnityClient/Library/
 Client/RoborallyUnityClient/Temp/
+Client/RoborallyUnityClient/Assets/RoborallyCommons
 Server/RoborallyPhoton/Photon/deploy/log/
+Server/RoborallyPhoton/Photon/deploy/Roborally/bin
+Server/TestResults/
 
 *.license
 
@@ -16,6 +18,7 @@ Server/RoborallyPhoton/Photon/deploy/log/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+Server/Roborally.sln.DotSettings.user
 
 # Build results
 [Dd]ebug/
