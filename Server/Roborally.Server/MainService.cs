@@ -1,12 +1,19 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
 using Roborally.Communication.ServerInterfaces;
 
 namespace Roborally.Server
 {
     /// <summary>The main service.</summary>
     public class MainService : IMainService
-    {        
+    {
+
+        public MainService()
+        {
+            loginManager = new LoginManager();
+        }
+
+        private LoginManager loginManager;
 
         /// <summary>Gets information about what happens after performing actions of board objects.</summary>
         /// <param name="robots">The robots with new position and status.</param>
@@ -46,7 +53,7 @@ namespace Roborally.Server
         /// <returns>Robots that can play.</returns>
         public ICollection<IRobot> GetMyRobots()
         {
-            return null;
+            return RobotsDatabase.Instance.GetRobots();
         }
 
         /// <summary>Get ratings.</summary>
@@ -69,14 +76,12 @@ namespace Roborally.Server
         /// <returns>The <see cref="IUser"/>.</returns>
         public IUser Login(string login, string password)
         {
-            if (login == "1" && password == "1")
+            IUser result = loginManager.Login(login, password);
+            if (result == null)
             {
-                return new User("1", "Vasya");
+                throw new ArgumentNullException();
             }
-            else
-            {
-                return null;
-            }
+            return result;
         }
 
         /// <summary>Gets information about what happens after performing moving robots.</summary>

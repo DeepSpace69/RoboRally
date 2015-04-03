@@ -22,7 +22,7 @@ namespace Roborally.Server.Tests
         {
             var user = this.mainService.Login("1", "1");
 
-            Assert.AreEqual("1", user.ID);
+            Assert.AreEqual(1, user.ID);
         }
 
         [TestMethod]
@@ -42,7 +42,7 @@ namespace Roborally.Server.Tests
 
             var myRobots = this.mainService.GetMyRobots();
 
-            Assert.AreEqual(1, myRobots.Count);
+            Assert.AreEqual(2, myRobots.Count);
             Assert.AreEqual(myRobots.First().Name, "TestRobot");
             Assert.AreEqual(myRobots.First().ModelId, 1);
         }

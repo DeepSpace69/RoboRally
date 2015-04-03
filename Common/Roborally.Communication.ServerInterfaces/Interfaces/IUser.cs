@@ -6,7 +6,7 @@ namespace Roborally.Communication.ServerInterfaces
         #region Public Properties
 
         /// <summary>Gets the id.</summary>
-        string ID { get; }
+        int ID { get; }
 
         /// <summary>Gets the name.</summary>
         string Name { get; }
