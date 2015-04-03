@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{2662B409-6332-1E56-D797-C9025C53BDD6}</ProjectGuid>
+	<ProjectGuid>{79794840-1FEA-CB11-7E85-4C1462BEFD68}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -67,7 +67,22 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>C:/Work/Git/RoboRally/Client/Unity/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="Roborally.Communication.Data">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="Roborally.Communication.ServerInterfaces">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.ServerInterfaces.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Audio">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Audio.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Networking">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="eDriven.Core">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/root/eDriven/Libs/eDriven.Core.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,6 +5,9 @@ namespace Roborally.Communication.ServerInterfaces
     {
         #region Public Properties
 
+        /// <summary>Gets the card identifier (in scope of turn).</summary>
+        string ID { get; }
+        
         /// <summary>Gets the energy.</summary>
         int Energy { get; }
 
