@@ -1,6 +1,8 @@
 Server/TestResults/
 Client/RoborallyUnityClient/Library/
 Client/RoborallyUnityClient/Temp/
+Server/RoborallyPhoton/Photon/deploy/log/
+
 *.license
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -25,6 +27,7 @@ x86/
 build/
 bld/
 [Oo]bj/
+[Cc]ache/
 
 *.pdb
 *_i.c
