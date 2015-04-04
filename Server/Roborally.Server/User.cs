@@ -9,9 +9,7 @@ namespace Roborally.Server
             this.ID = id;
             this.Name = name;
         }
-
         public int ID { get; set; }
-
         public string Name { get; set; }
     }
 }
