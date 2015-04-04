@@ -24,7 +24,7 @@ public partial class PhotonServer
     private void OnLoginCompleted(OperationResponse operationResponse)
     {
         var user = new PhotonUser(operationResponse.Parameters);
-        if (user.ID != "0")
+        if (user.ID != 0)
         {
             this.Status = user.Name;
             if (this.LoginCompleted != null)
