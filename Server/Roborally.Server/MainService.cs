@@ -76,9 +76,11 @@ namespace Roborally.Server
         /// <returns>The <see cref="IUser"/>.</returns>
         public IUser Login(string login, string password)
         {
+            // TODO эксепшен должен кидаться самим менеджером
             IUser result = loginManager.Login(login, password);
             if (result == null)
             {
+                // TODO ArgumentNullException можно кидать только когда входящий аргумент налл, а не когда результат налл
                 throw new ArgumentNullException();
             }
             return result;
