@@ -40,15 +40,27 @@ namespace Roborally.Server.Tests
         }
 
         [TestMethod]
-        public void CreateRobot_TestWithFirstModel_RobotCreated()
+        public void GetMyRobots_CorrectRobots()
         {
-            this.SetupGame();
-
+            this.mainService.Login("1", "1");
             var myRobots = this.mainService.GetMyRobots();
 
-            Assert.AreEqual(2, myRobots.Count);
-            Assert.AreEqual(myRobots.First().Name, "TestRobot");
-            Assert.AreEqual(myRobots.First().ModelId, 1);
+            var myRobotsIds = myRobots.Select(p => p.Id).ToList();
+
+            CollectionAssert.AllItemsAreUnique(myRobotsIds);
+        }
+
+        [TestMethod]
+        public void CreateRobot_TestWithFirstModel_RobotCreated()
+        {
+            this.mainService.Login("1", "1");
+
+            var randName = Guid.NewGuid().ToString();
+
+            this.mainService.CreateRobot(1, randName);
+            var myRobots = this.mainService.GetMyRobots();
+
+            Assert.IsTrue(myRobots.Any(p => p.Name == randName && p.ModelId == 1));
         }
 
         [TestMethod]
