@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuOperations.cs">
+      <DependentUpon>MainPeer.cs</DependentUpon>
+    </Compile>
     <Compile Include="OperationsMapper.cs">
       <DependentUpon>MainPeer.cs</DependentUpon>
     </Compile>

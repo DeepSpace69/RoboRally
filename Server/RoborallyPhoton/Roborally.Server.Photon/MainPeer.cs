@@ -1,11 +1,10 @@
+using System;
+using global::Photon.SocketServer;
+using PhotonHostRuntimeInterfaces;
+using Roborally.Communication.ServerInterfaces;
+
 namespace Roborally.Server.Photon
 {
-    using System;
-    using global::Photon.SocketServer;
-    using PhotonHostRuntimeInterfaces;
-    using Roborally.Communication.ServerInterfaces;
-
-
     /// <summary>The main peer.</summary>
     public partial class MainPeer : PeerBase
     {
@@ -20,10 +19,8 @@ namespace Roborally.Server.Photon
         public MainPeer(IRpcProtocol protocol, IPhotonPeer unmanagedPeer, IMainService mainService)
             : base(protocol, unmanagedPeer)
         {
-
-
-
             this.mainService = mainService;
+            this.Init();
             lock (syncRoot)
             {
                 BroadcastMessage += this.OnBroadcastMessage;

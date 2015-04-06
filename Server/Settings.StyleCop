@@ -4,16 +4,18 @@
       <Value>autofac</Value>
       <Value>autostart</Value>
       <Value>const</Value>
+      <Value>init</Value>
       <Value>ctor</Value>
       <Value>efw</Value>
       <Value>int</Value>
       <Value>notifier</Value>
       <Value>xaml</Value>
-	  <Value>encodable</Value>
-	  <Value>arb</Value>
-	  <Value>calc</Value>
-	  <Value>mgmt</Value>
-	  <Value>parameterless</Value>
+      <Value>encodable</Value>
+      <Value>arb</Value>
+      <Value>calc</Value>
+      <Value>mgmt</Value>
+      <Value>parameterless</Value>
+      <Value>roborally</Value>
     </CollectionProperty>
   </GlobalSettings>
   <Analyzers>

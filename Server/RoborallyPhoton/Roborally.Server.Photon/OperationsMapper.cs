@@ -1,61 +1,40 @@
+using System.Collections.Generic;
+using global::Photon.SocketServer;
+using Roborally.Communication.Data.DataContracts;
+
 namespace Roborally.Server.Photon
 {
-    using System;
-
-    using EmitMapper;
-
-    using global::Photon.SocketServer;
-
-    using Roborally.Communication.Data.DataContracts;
-    using Roborally.Communication.ServerInterfaces;
-
-
     /// <summary>The main peer.</summary>
     public partial class MainPeer
     {
+        private readonly Dictionary<byte, OperationRequestDelegate> operationsDictionary = new Dictionary<byte, OperationRequestDelegate>();
+
+        private delegate void OperationRequestDelegate(OperationRequest operationRequest, SendParameters sendParameters);
+
         /// <summary>The on operation request.</summary>
         /// <param name="operationRequest">The operation request.</param>
         /// <param name="sendParameters">The send parameters.</param>
         protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
         {
-            switch (operationRequest.OperationCode)
+            OperationRequestDelegate operation;
+            var success = this.operationsDictionary.TryGetValue(operationRequest.OperationCode, out operation);
+
+            if (success)
             {
-                case LoginParameters.OperationCode:
-                    this.Login(operationRequest, sendParameters);
-                    break;
-                case CreateRobotParameters.OperationCode:
-                    this.CreateRobot(operationRequest, sendParameters);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void CreateRobot(OperationRequest operationRequest, SendParameters sendParameters)
-        {
-            var incoming = new CreateRobotParameters(operationRequest.Parameters);
-            this.mainService.CreateRobot(Convert.ToInt32(incoming.ModelId), incoming.Name);
-            var response = new OperationResponse(operationRequest.OperationCode);
-            this.SendOperationResponse(response, sendParameters);
-        }
-
-        private void Login(OperationRequest operationRequest, SendParameters sendParameters)
-        {
-            var incoming = new LoginParameters(operationRequest.Parameters);
-            var user = this.mainService.Login(incoming.Login, incoming.Password);
-
-            PhotonUser photonUser;
-            if (user != null)
-            {
-                photonUser = ObjectMapperManager.DefaultInstance.GetMapper<IUser, PhotonUser>().Map(user);
+                operation(operationRequest, sendParameters);
             }
             else
             {
-                photonUser = new PhotonUser() { ID = 0, Name = string.Empty };
+                var response = new OperationResponse(operationRequest.OperationCode, new Dictionary<byte, object>() { { 1, "Unknown operation" } });
+                this.SendOperationResponse(response, sendParameters);
             }
+        }
 
-            var response = new OperationResponse(operationRequest.OperationCode, photonUser.ToParameters());
-            this.SendOperationResponse(response, sendParameters);
+        private void Init()
+        {
+            this.operationsDictionary.Add(LoginParameters.OperationCode, this.Login);
+            this.operationsDictionary.Add(CreateRobotParameters.OperationCode, this.CreateRobot);
+            this.operationsDictionary.Add(103, this.GetMyRobots);
         }
     }
 }

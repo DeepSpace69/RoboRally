@@ -112,7 +112,7 @@ namespace Roborally.Server.Photon.TestClient
         public void DoWork()
         {
             var parameters = new Dictionary<byte, object> { { 101, "1" }, { 102, "1" } };
-            peer.OpCustom(1, parameters, true);
+            peer.OpCustom(103, parameters, true);
         }
     }
 }
