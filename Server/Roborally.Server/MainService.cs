@@ -47,7 +47,7 @@ namespace Roborally.Server
         /// <returns>Available maps for playing.</returns>
         public ICollection<IMap> GetMaps()
         {
-            return null;
+           return MapManager.Instance.GetAllMaps();
         }
 
         /// <summary>Get robots of current user, that can play.</summary>
