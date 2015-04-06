@@ -14,9 +14,11 @@ namespace Roborally.Server
        private RobotsDatabase()
         {
             this.AllRobots = new List<IRobot>();
+            this.idCounter = 0;
             this.InitForTest();
         }
 
+       private int idCounter;
         private ICollection<IRobot> AllRobots { get; set; }
 
         /// <summary>Gets the instance.</summary>
@@ -42,8 +44,15 @@ namespace Roborally.Server
 
         private void InitForTest()
         {
-            this.AllRobots.Add(new Robot(1, 1, "TestRobot"));
-            this.AllRobots.Add(new Robot(2, 2, "TestRobot2"));
+            this.CreateRobot(1, "TestRobot");
+            this.CreateRobot(2, "TestRobot2");
+        }
+
+       public void CreateRobot(int modelId, string name)
+        {
+            idCounter = idCounter + 1;
+           //проверить на существующий ИД?
+            this.AllRobots.Add(new Robot(idCounter, modelId, name));
         }
 
     }

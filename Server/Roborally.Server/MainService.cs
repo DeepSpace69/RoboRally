@@ -26,6 +26,7 @@ namespace Roborally.Server
         /// <param name="name">The name of robot.</param>
         public void CreateRobot(int robotModelId, string name)
         {
+            RobotsDatabase.Instance.CreateRobot(robotModelId, name);
         }
 
         /// <summary>Get cards for current turn.</summary>
