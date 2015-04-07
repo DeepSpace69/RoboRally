@@ -1,5 +1,8 @@
 ﻿using Photon.SocketServer;
 
+using Roborally.Server.Photon.Interfaces;
+using Roborally.Server.Photon.Services;
+
 namespace Roborally.Server.Photon
 {
     /// <summary>The roborally host.</summary>
@@ -10,7 +13,18 @@ namespace Roborally.Server.Photon
         /// <returns>The <see cref="PeerBase"/>.</returns>
         protected override PeerBase CreatePeer(InitRequest initRequest)
         {
-            return new MainPeer(initRequest.Protocol, initRequest.PhotonPeer, new MainService());
+            // TODO to IoC
+            var repository = new RoborallyPhotonServiceRepository();
+
+            this.CreateServices(repository);
+
+            return new MainPeer(initRequest.Protocol, initRequest.PhotonPeer, repository);
+        }
+
+        private void CreateServices(IServiceRepository repository)
+        {
+            var mainService = new MainService();
+            var menuService = new RoborallyPhotonMenuServices(repository, mainService);
         }
 
         /// <summary>The setup.</summary>

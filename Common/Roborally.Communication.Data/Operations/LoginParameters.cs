@@ -5,9 +5,7 @@ using System.Collections.Generic;
 namespace Roborally.Communication.Data.DataContracts
 {
     public class LoginParameters : SerializableMapBase
-    {
-        public const int OperationCode = 101;
-
+    {        
         public LoginParameters()
         { }
 

@@ -1,26 +1,26 @@
 using System;
+
 using global::Photon.SocketServer;
 using PhotonHostRuntimeInterfaces;
-using Roborally.Communication.ServerInterfaces;
+using Roborally.Server.Photon.Interfaces;
 
 namespace Roborally.Server.Photon
 {
     /// <summary>The main peer.</summary>
-    public partial class MainPeer : PeerBase
+    public class MainPeer : PeerBase
     {
         private static readonly object syncRoot = new object();
 
-        private readonly IMainService mainService;
+        private readonly IServiceRepository serviceRepository;
 
         /// <summary>Initializes a new instance of the <see cref="MainPeer"/> class.</summary>
         /// <param name="protocol">The protocol.</param>
         /// <param name="unmanagedPeer">The unmanaged peer.</param>
-        /// <param name="mainService">The main service.</param>
-        public MainPeer(IRpcProtocol protocol, IPhotonPeer unmanagedPeer, IMainService mainService)
+        /// <param name="serviceRepository">The main service.</param>
+        public MainPeer(IRpcProtocol protocol, IPhotonPeer unmanagedPeer, IServiceRepository serviceRepository)
             : base(protocol, unmanagedPeer)
         {
-            this.mainService = mainService;
-            this.Init();
+            this.serviceRepository = serviceRepository;
             lock (syncRoot)
             {
                 BroadcastMessage += this.OnBroadcastMessage;
@@ -38,6 +38,15 @@ namespace Roborally.Server.Photon
             {
                 BroadcastMessage -= this.OnBroadcastMessage;
             }
+        }
+
+        /// <summary>The on operation request.</summary>
+        /// <param name="operationRequest">The operation request.</param>
+        /// <param name="sendParameters">The send parameters.</param>
+        protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
+        {
+            var response = this.serviceRepository.Execute(operationRequest);
+            this.SendOperationResponse(response, sendParameters);
         }
 
         private void OnBroadcastMessage(MainPeer peer, EventData @event, SendParameters sendParameters)

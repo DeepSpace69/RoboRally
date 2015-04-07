@@ -6,8 +6,6 @@ namespace Roborally.Communication.Data.DataContracts
 {
     public class CreateRobotParameters : SerializableMapBase
     {
-        public const int OperationCode = 102;
-
         public CreateRobotParameters()
         { }
 

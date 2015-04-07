@@ -40,14 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\PhotonMap.cs" />
     <Compile Include="DataContracts\PhotonRobot.cs" />
+    <Compile Include="DataContracts\PhotonRobotModel.cs" />
     <Compile Include="DataContracts\PhotonUser.cs" />
-    <Compile Include="DataFieldAttribute.cs" />
+    <Compile Include="Operations\OperationCodes.cs" />
+    <Compile Include="Serializers\DataFieldAttribute.cs" />
     <Compile Include="Operations\CreateRobotParameters.cs" />
     <Compile Include="Operations\LoginParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReflectiveMapSerializer.cs" />
-    <Compile Include="SerializableMapBase.cs" />
+    <Compile Include="Serializers\ReflectiveMapSerializer.cs" />
+    <Compile Include="Serializers\SerializableMapBase.cs" />
+    <Compile Include="Serializers\ObjectExtensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
