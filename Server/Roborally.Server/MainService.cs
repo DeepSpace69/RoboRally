@@ -11,9 +11,11 @@ namespace Roborally.Server
         public MainService()
         {
             loginManager = new LoginManager();
+            gameModel = new GameModel();
         }
 
         private LoginManager loginManager;
+        private GameModel gameModel;
 
         /// <summary>Gets information about what happens after performing actions of board objects.</summary>
         /// <param name="robots">The robots with new position and status.</param>
@@ -100,6 +102,7 @@ namespace Roborally.Server
         /// <param name="numberOfPlayers">The number of players.</param>
         public void Play(int robotId, int mapId, int numberOfPlayers)
         {
+            this.gameModel.Start(robotId, mapId, numberOfPlayers);
         }
 
         /// <summary>Performing power down - skip last turn.</summary>

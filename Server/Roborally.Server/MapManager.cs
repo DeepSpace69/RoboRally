@@ -42,6 +42,26 @@ namespace Roborally.Server
             return this.MapsDatabase;
         }
 
+        public IMap GetMapById(int id)
+        {
+            IMap result = null;
+            foreach (var item in MapsDatabase)
+            {
+                if (item.Id == id)
+                {
+                    result = item;
+                }
+                break;
+            }
+            //проверка на 2 одинаковых ИД?
+            if (result == null)
+            {
+                throw new NullReferenceException();
+            }
+            return result;
+        }
+
+
         private void InitForTest()
         {
             this.CreateMap(1, "TestMap1");

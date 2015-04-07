@@ -42,18 +42,57 @@ namespace Roborally.Server
             return this.AllRobots;
         }
 
+        public IRobot GetRobotById(int id)
+        {
+            IRobot result = null;
+            foreach (var item in AllRobots)
+            {
+                if (item.Id == id)
+                {
+                    result = item;
+                }
+                break;
+            }
+            //проверка на 2 одинаковых ИД?
+            if (result == null)
+            {
+                throw new NullReferenceException();
+            }
+            return result;
+        }
+
         private void InitForTest()
         {
-            this.CreateRobot(1, "TestRobot");
+            this.CreateRobot(1, "TestRobot1");
             this.CreateRobot(2, "TestRobot2");
         }
 
-       public void CreateRobot(int modelId, string name)
+        public void CreateRobot(int modelId, string name)
         {
-            idCounter = idCounter + 1;
-           //проверить на существующий ИД?
-            this.AllRobots.Add(new Robot(idCounter, modelId, name));
+            if (this.NameIsOriginal(name))
+	        {
+                idCounter = idCounter + 1;
+                //проверить на существующий ИД?
+                this.AllRobots.Add(new Robot(idCounter, modelId, name));
+	        }
+            else
+            {
+                throw new ArgumentException();
+            }         
         }
+
+       private bool NameIsOriginal(string name)
+       {
+           bool result = true;
+           foreach (var item in this.AllRobots)
+           {
+               if (item.Name == name )
+               {
+                   result = false;
+               }
+           }
+           return result;
+       }
 
     }
 }
