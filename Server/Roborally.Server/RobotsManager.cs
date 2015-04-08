@@ -7,28 +7,28 @@ using Roborally.Communication.ServerInterfaces;
 
 namespace Roborally.Server
 {
-   internal class RobotsDatabase
+    internal class RobotsManager
     {
-       private static RobotsDatabase instance;
+        private static RobotsManager instance;
 
-       private RobotsDatabase()
+        private RobotsManager()
         {
-            this.AllRobots = new List<IRobot>();
+            this.RobotsDatabase = new List<IRobot>();
             this.idCounter = 0;
             this.InitForTest();
         }
 
        private int idCounter;
-        private ICollection<IRobot> AllRobots { get; set; }
+        private ICollection<IRobot> RobotsDatabase { get; set; }
 
         /// <summary>Gets the instance.</summary>
-        public static RobotsDatabase Instance
+        public static RobotsManager Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new RobotsDatabase();
+                    instance = new RobotsManager();
                 }
 
                 return instance;
@@ -39,13 +39,13 @@ namespace Roborally.Server
         /// <returns>The <see cref="ICollection"/>.</returns>
         public ICollection<IRobot> GetRobots()
         {
-            return this.AllRobots;
+            return this.RobotsDatabase;
         }
 
         public IRobot GetRobotById(int id)
         {
             IRobot result = null;
-            foreach (var item in AllRobots)
+            foreach (var item in RobotsDatabase)
             {
                 if (item.Id == id)
                 {
@@ -73,7 +73,7 @@ namespace Roborally.Server
 	        {
                 idCounter = idCounter + 1;
                 //проверить на существующий ИД?
-                this.AllRobots.Add(new Robot(idCounter, modelId, name));
+                this.RobotsDatabase.Add(new Robot(idCounter, modelId, name));
 	        }
             else
             {
@@ -84,7 +84,7 @@ namespace Roborally.Server
        private bool NameIsOriginal(string name)
        {
            bool result = true;
-           foreach (var item in this.AllRobots)
+           foreach (var item in this.RobotsDatabase)
            {
                if (item.Name == name )
                {
@@ -93,6 +93,5 @@ namespace Roborally.Server
            }
            return result;
        }
-
     }
 }

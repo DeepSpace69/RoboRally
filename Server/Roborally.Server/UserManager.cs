@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Roborally.Server
 {
-    internal class UserDatabase
+   internal class UserManager
     {
-        public UserDatabase()
+       public UserManager()
         {
             this.AllUsers = new List<User>();
         }

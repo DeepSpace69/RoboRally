@@ -10,7 +10,7 @@ namespace Roborally.Server
     {
         public void Start(int robotId, int mapId, int numberOfPlayers)
         {
-            RobotsDatabase.Instance.GetRobotById(robotId);
+            RobotsManager.Instance.GetRobotById(robotId);
             MapManager.Instance.GetMapById(mapId);
             //number of players?
         }

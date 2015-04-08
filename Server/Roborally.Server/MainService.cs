@@ -28,7 +28,7 @@ namespace Roborally.Server
         /// <param name="name">The name of robot.</param>
         public void CreateRobot(int robotModelId, string name)
         {
-            RobotsDatabase.Instance.CreateRobot(robotModelId, name);
+            RobotsManager.Instance.CreateRobot(robotModelId, name);
         }
 
         /// <summary>Get cards for current turn.</summary>
@@ -56,7 +56,7 @@ namespace Roborally.Server
         /// <returns>Robots that can play.</returns>
         public ICollection<IRobot> GetMyRobots()
         {
-            return RobotsDatabase.Instance.GetRobots();
+            return RobotsManager.Instance.GetRobots();
         }
 
         /// <summary>Get ratings.</summary>
@@ -70,7 +70,7 @@ namespace Roborally.Server
         /// <returns>Available robots models.</returns>
         public ICollection<IRobotsModel> GetRobotsModels()
         {
-            return RobotModelsDatabase.Instance.GetAllRobotModels();
+            return RobotModelsManager.Instance.GetAllRobotModels();
         }
 
         /// <summary>Login into game.</summary>

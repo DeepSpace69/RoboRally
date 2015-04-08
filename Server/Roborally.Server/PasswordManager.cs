@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace Roborally.Server
 {
-    internal class PasswordDatabase
+   internal class PasswordManager
     {
-        public PasswordDatabase()
+       public PasswordManager()
         {
-            this.AllPasswords = new Dictionary<int, string>();
-            this.AllPasswords.Add(0, "0");
+            this.PasswordsDatabase = new Dictionary<int, string>();
+            this.PasswordsDatabase.Add(0, "0");
         }
 
-        private Dictionary<int, string> AllPasswords;
+        private Dictionary<int, string> PasswordsDatabase;
 
         public bool UserIsGenuine(int id, string password)
         {
             bool result = false;
 
-            if (password == this.AllPasswords[id])
+            if (password == this.PasswordsDatabase[id])
             {
                 result = true;
             }
@@ -29,16 +29,15 @@ namespace Roborally.Server
 
         public int AddPassword(string password)
         {
-            int max = this.AllPasswords.Keys.Max();
+            int max = this.PasswordsDatabase.Keys.Max();
             int id = max + 1;
-            this.AllPasswords.Add(id, password);
+            this.PasswordsDatabase.Add(id, password);
             return id;
         }
 
         public void ChangePassword(int id, string password)
         {
-            this.AllPasswords[id] = password;
+            this.PasswordsDatabase[id] = password;
         }
-
     }
 }

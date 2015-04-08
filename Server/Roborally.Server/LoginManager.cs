@@ -11,27 +11,27 @@ namespace Roborally.Server
     {
         public LoginManager()
         {
-            passwordDatabase = new PasswordDatabase();
-            userDatabase = new UserDatabase();
+            passwordManager = new PasswordManager();
+            userManager = new UserManager();
             this.InitForTest();
         }
 
         private void InitForTest()
         {
             this.CreateNewUser("1", "1");
-            this.userDatabase.AddUser(1, "1");
-            this.passwordDatabase.AddPassword("1");
+            this.userManager.AddUser(1, "1");
+            this.passwordManager.AddPassword("1");
         }
 
-        private PasswordDatabase passwordDatabase;
-        private UserDatabase userDatabase;
+        private PasswordManager passwordManager;
+        private UserManager userManager;
 
 
         public IUser Login(string login, string password)
         {
             IUser result = null;
-            User user = this.userDatabase.GetUser(login);
-            bool isGenuine = this.passwordDatabase.UserIsGenuine(user.ID, password);
+            User user = this.userManager.GetUser(login);
+            bool isGenuine = this.passwordManager.UserIsGenuine(user.ID, password);
             if (isGenuine)
             {
                 result = user;
@@ -42,9 +42,8 @@ namespace Roborally.Server
 
         public void CreateNewUser(string login, string password)
         {
-            int id = this.passwordDatabase.AddPassword(login);
-            this.userDatabase.AddUser(id, password);
-
+            int id = this.passwordManager.AddPassword(login);
+            this.userManager.AddUser(id, password);
         }
     }
 }
