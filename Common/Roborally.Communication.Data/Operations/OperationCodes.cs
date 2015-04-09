@@ -11,5 +11,9 @@
         public const byte GetMapsOperationCode = 104;
 
         public const byte GetRobotsModelsOperationCode = 105;
+
+        public const byte StartGameOperationCode = 106;
+
+        public const byte GetCurrentGameInfoOperationCode = 107;        
     }
 }

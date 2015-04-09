@@ -14,10 +14,10 @@ namespace Roborally.Communication.ServerInterfaces
         GameStateEnum CurrentState { get; }
 
         /// <summary>Gets the game robots.</summary>
-        ICollection<IGameRobot> GameRobots { get; }
+        IEnumerable<IGameRobot> GameRobots { get; }
 
         /// <summary>Gets the registers.</summary>
-        ICollection<IRegister> Registers { get; }
+        IEnumerable<IRegister> Registers { get; }
 
         #endregion
     }

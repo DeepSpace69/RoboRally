@@ -36,8 +36,8 @@ namespace Roborally.Server
         }
 
         /// <summary>The get all robot models.</summary>
-        /// <returns>The <see cref="ICollection"/>.</returns>
-        public ICollection<IRobot> GetRobots()
+        /// <returns>The <see cref="IEnumerable"/>.</returns>
+        public IEnumerable<IRobot> GetRobots()
         {
             return this.RobotsDatabase;
         }

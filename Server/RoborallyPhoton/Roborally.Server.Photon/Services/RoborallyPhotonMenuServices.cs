@@ -85,5 +85,14 @@ namespace Roborally.Server.Photon.Services
             var response = new OperationResponse(operationRequest.OperationCode, listToSerialize.ToPhotonParameters());
             return response;
         }
+
+        [OperationCodeAttribute(Code = OperationCodes.StartGameOperationCode)]
+        private OperationResponse StartGame(OperationRequest operationRequest)
+        {
+            var incoming = new StartGameParameters(operationRequest.Parameters);
+            this.mainService.Play(incoming.RobotId, incoming.MapId, incoming.NumberOfPlayers);
+            var response = new OperationResponse(operationRequest.OperationCode);
+            return response;
+        }
     }
 }

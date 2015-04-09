@@ -9,7 +9,7 @@ namespace Roborally.Communication.ServerInterfaces
 
         /// <summary>Gets information about what happens after performing actions of board objects.</summary>
         /// <param name="robots">The robots with new position and status.</param>
-        void BoardActions(ICollection<IGameRobot> robots);
+        void BoardActions(IEnumerable<IGameRobot> robots);
 
         /// <summary>Create new robot for current user.</summary>
         /// <param name="robotModelId">The robot's model id.</param>
@@ -18,7 +18,7 @@ namespace Roborally.Communication.ServerInterfaces
 
         /// <summary>Get cards for current turn.</summary>
         /// <returns>Collection of card for current turn.</returns>
-        ICollection<IOrderCard> GetCards();
+        IEnumerable<IOrderCard> GetCards();
 
         /// <summary>Get current game info. Call each new turn.</summary>
         /// <returns>The object that represents all details about current game.</returns>
@@ -26,19 +26,19 @@ namespace Roborally.Communication.ServerInterfaces
 
         /// <summary>Get available maps for playing.</summary>
         /// <returns>Available maps for playing.</returns>
-        ICollection<IMap> GetMaps();
+        IEnumerable<IMap> GetMaps();
 
         /// <summary>Get robots of current user, that can play.</summary>
         /// <returns>Robots that can play.</returns>
-        ICollection<IRobot> GetMyRobots();
+        IEnumerable<IRobot> GetMyRobots();
 
         /// <summary>Get ratings.</summary>
         /// <returns>Information about race, places, kills, etc.</returns>
-        ICollection<IRating> GetRatings();
+        IEnumerable<IRating> GetRatings();
 
         /// <summary>Gets robots models.</summary>
         /// <returns>Available robots models.</returns>
-        ICollection<IRobotsModel> GetRobotsModels();
+        IEnumerable<IRobotsModel> GetRobotsModels();
 
         /// <summary>Login into game.</summary>
         /// <param name="login">User's login.</param>
@@ -49,7 +49,7 @@ namespace Roborally.Communication.ServerInterfaces
         /// <summary>Gets information about what happens after performing moving robots.</summary>
         /// <param name="robotId">Current players robot id.</param>
         /// <param name="robots">The robots.</param>
-        void MoveRobots(int robotId, ICollection<IGameRobot> robots);
+        void MoveRobots(int robotId, IEnumerable<IGameRobot> robots);
 
         /// <summary>Start game.</summary>
         /// <param name="robotId">The robot id.</param>
@@ -62,7 +62,7 @@ namespace Roborally.Communication.ServerInterfaces
 
         /// <summary>Place order cards into registers and send this info on server.</summary>
         /// <param name="registers">The registers with cards.</param>
-        void SetupRegisters(ICollection<IRegister> registers);
+        void SetupRegisters(IEnumerable<IRegister> registers);
 
         /// <summary>Show content of current registers of all players.</summary>
         /// <param name="registers">Registers with their cards.</param>

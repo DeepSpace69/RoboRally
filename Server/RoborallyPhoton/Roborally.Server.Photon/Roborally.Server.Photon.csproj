@@ -61,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Base\OperationCodeAttribute.cs" />
     <Compile Include="Services\Base\RoborallyPhotonServiceRepository.cs" />
+    <Compile Include="Services\RoborallyPhotonGameServices.cs" />
     <Compile Include="Services\RoborallyPhotonMenuServices.cs" />
     <Compile Include="Services\Base\RoborallyPhotonServicesBase.cs" />
   </ItemGroup>

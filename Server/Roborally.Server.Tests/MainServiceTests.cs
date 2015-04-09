@@ -35,7 +35,7 @@ namespace Roborally.Server.Tests
             var models = this.mainService.GetRobotsModels();
 
             Assert.IsNotNull(models);
-            Assert.IsTrue(models.Count > 0);
+            Assert.IsTrue(models.Count() > 0);
             Assert.IsTrue(models.Any(p => p.Id == 1));
         }
 
@@ -68,7 +68,7 @@ namespace Roborally.Server.Tests
         {
             var mapsCollection = this.mainService.GetMaps();
 
-            Assert.IsTrue(mapsCollection.Count > 0);
+            Assert.IsTrue(mapsCollection.Count() > 0);
             Assert.IsTrue(mapsCollection.Any(p => p.Id == 1));
         }
 
@@ -92,7 +92,7 @@ namespace Roborally.Server.Tests
             // Other
             Assert.AreEqual(GameStateEnum.DrawCards, gameInfo.CurrentState);
             Assert.IsNotNull(gameInfo);
-            Assert.AreEqual(5, gameInfo.Registers.Count);
+            Assert.AreEqual(5, gameInfo.Registers.Count());
 
             // Registers
             CollectionAssert.AllItemsAreUnique(gameInfo.Registers.Select(p => p.ID).ToList());
@@ -100,7 +100,7 @@ namespace Roborally.Server.Tests
             Assert.IsTrue(gameInfo.Registers.All(p => p.Content == null));
 
             // Robots
-            Assert.AreEqual(1, gameInfo.GameRobots.Count);
+            Assert.AreEqual(1, gameInfo.GameRobots.Count());
             var myRobot = gameInfo.GameRobots.FirstOrDefault();
             Assert.IsNotNull(myRobot);
             Assert.AreEqual(DirectionEnum.Up, myRobot.CurrentDirection);
@@ -133,7 +133,7 @@ namespace Roborally.Server.Tests
             this.SetupGame();
             var cards = this.mainService.GetCards();
 
-            Assert.AreEqual(9, cards.Count);
+            Assert.AreEqual(9, cards.Count());
             Assert.IsTrue(cards.All(p => p.Energy > 0 && p.Energy < 1000));
             Assert.IsTrue(cards.All(p => p.Type != MoveDirectionEnum.None));
         }

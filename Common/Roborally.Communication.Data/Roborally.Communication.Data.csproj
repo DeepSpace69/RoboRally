@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,10 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\BoardObjects\PhotonEmptyCell.cs" />
+    <Compile Include="DataContracts\PhotonBoard.cs" />
+    <Compile Include="DataContracts\PhotonCurrentGameInfo.cs" />
+    <Compile Include="DataContracts\PhotonGameRobot.cs" />
     <Compile Include="DataContracts\PhotonMap.cs" />
+    <Compile Include="DataContracts\PhotonOrderCard.cs" />
+    <Compile Include="DataContracts\PhotonPosition.cs" />
+    <Compile Include="DataContracts\PhotonRegister.cs" />
     <Compile Include="DataContracts\PhotonRobot.cs" />
     <Compile Include="DataContracts\PhotonRobotModel.cs" />
     <Compile Include="DataContracts\PhotonUser.cs" />
+    <Compile Include="Operations\StartGameParameters.cs" />
     <Compile Include="Operations\OperationCodes.cs" />
     <Compile Include="Serializers\DataFieldAttribute.cs" />
     <Compile Include="Operations\CreateRobotParameters.cs" />

@@ -25,6 +25,7 @@ namespace Roborally.Server.Photon
         {
             var mainService = new MainService();
             var menuService = new RoborallyPhotonMenuServices(repository, mainService);
+            var gameService = new RoborallyPhotonGameServices(repository, mainService);
         }
 
         /// <summary>The setup.</summary>

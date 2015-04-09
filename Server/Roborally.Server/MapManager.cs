@@ -36,8 +36,8 @@ namespace Roborally.Server
         }
 
         /// <summary>The get all robot models.</summary>
-        /// <returns>The <see cref="ICollection"/>.</returns>
-        public ICollection<IMap> GetAllMaps()
+        /// <returns>The <see cref="IEnumerable"/>.</returns>
+        public IEnumerable<IMap> GetAllMaps()
         {
             return this.MapsDatabase;
         }

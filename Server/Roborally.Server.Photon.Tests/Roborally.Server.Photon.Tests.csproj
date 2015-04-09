@@ -58,6 +58,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="RoborallyPhotonGameServicesTests.cs" />
     <Compile Include="RoborallyPhotonMenuServicesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +70,10 @@
     <ProjectReference Include="..\..\Common\Roborally.Communication.ServerInterfaces\Roborally.Communication.ServerInterfaces.csproj">
       <Project>{f9c0421a-0be9-46a2-a22e-3ac9889a9d2b}</Project>
       <Name>Roborally.Communication.ServerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roborally.Server\Roborally.Server.csproj">
+      <Project>{BBD89A0D-26BD-4111-BE68-C44CC10C86A6}</Project>
+      <Name>Roborally.Server</Name>
     </ProjectReference>
     <ProjectReference Include="..\RoborallyPhoton\Roborally.Server.Photon\Roborally.Server.Photon.csproj">
       <Project>{93591782-0dd6-457c-9fd3-ae64ddcea67e}</Project>
