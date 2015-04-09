@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using ExitGames.Client.Photon;
 
 using Roborally.Communication.Data.DataContracts;
+using Roborally.Communication.Data.Operations;
 
 /// <summary>The photon server.</summary>
 public partial class PhotonServer
@@ -18,7 +19,7 @@ public partial class PhotonServer
     public void Login(string login, string password)
     {
         var loginParams = new LoginParameters() { Login = login, Password = password };
-        this.peer.OpCustom(LoginParameters.OperationCode, loginParams.ToParameters(), false);
+        this.peer.OpCustom(OperationCodes.LoginOperationCode, loginParams.ToParameters(), false);
     }
 
     private void OnLoginCompleted(OperationResponse operationResponse)
@@ -41,7 +42,7 @@ public partial class PhotonServer
     public void CreateRobot(string robotName, string modelId)
     {
         var createRobotParams = new CreateRobotParameters() { ModelId = modelId, Name = robotName };
-        this.peer.OpCustom(CreateRobotParameters.OperationCode, createRobotParams.ToParameters(), false);
+        this.peer.OpCustom(OperationCodes.CreateRobotOperationCode, createRobotParams.ToParameters(), false);
     }
 
     private void OnCreateRobotCompleted(OperationResponse operationResponse)

@@ -6,6 +6,7 @@ using eDriven.Core.Events;
 
 using ExitGames.Client.Photon;
 using Roborally.Communication.Data.DataContracts;
+using Roborally.Communication.Data.Operations;
 
 using Timer = eDriven.Core.Util.Timer;
 
@@ -101,10 +102,10 @@ public partial class PhotonServer : IPhotonPeerListener
 
         switch (operationResponse.OperationCode)
         {
-            case LoginParameters.OperationCode:
+            case OperationCodes.LoginOperationCode:
                 this.OnLoginCompleted(operationResponse);
                 break;
-            case CreateRobotParameters.OperationCode:
+            case OperationCodes.CreateRobotOperationCode:
                 this.OnCreateRobotCompleted(operationResponse);
                 break;
         }

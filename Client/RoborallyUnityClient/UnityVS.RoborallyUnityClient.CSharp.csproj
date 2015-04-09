@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
     <Compile Include="Assets\Scripts\Menu\ModelSelection.cs" />
     <Compile Include="Assets\Scripts\Menu\RotationScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\StartNewGame\StartNewGameMainController.cs" />
     <Compile Include="Assets\Scripts\ServerOperations\GameServices.cs" />
     <Compile Include="Assets\Scripts\ServerOperations\MenuServices.cs" />
     <Compile Include="Assets\Scripts\ServerOperations\PhotonServer.cs" />
