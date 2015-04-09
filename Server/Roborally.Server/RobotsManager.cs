@@ -56,6 +56,8 @@ namespace Roborally.Server
             //проверка на 2 одинаковых ИД?
             if (result == null)
             {
+                // TODO Don't throw NullReferenceException. Create your own exceptions and use them.
+                // Read carefully: Things to Avoid When Throwing Exceptions https://msdn.microsoft.com/en-us/library/ms173163.aspx
                 throw new NullReferenceException();
             }
             return result;
@@ -89,6 +91,8 @@ namespace Roborally.Server
                if (item.Name == name )
                {
                    result = false;
+
+                   // TODO break foreach here. Use LINQ like instead of foreach: bool isOriginal = this.RobotsDatabase.All(p => p.Name != name);
                }
            }
            return result;
