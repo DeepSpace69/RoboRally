@@ -16,6 +16,7 @@ namespace Roborally.Server
 
         private LoginManager loginManager;
         private GameModel gameModel;
+        private User currentUser;
 
         /// <summary>Gets information about what happens after performing actions of board objects.</summary>
         /// <param name="robots">The robots with new position and status.</param>
@@ -81,6 +82,7 @@ namespace Roborally.Server
         {
             // TODO эксепшен должен кидаться самим менеджером
             IUser result = loginManager.Login(login, password);
+            this.currentUser = result as User; //так можно?
             if (result == null)
             {
                 // TODO ArgumentNullException можно кидать только когда входящий аргумент налл, а не когда результат налл
@@ -102,7 +104,7 @@ namespace Roborally.Server
         /// <param name="numberOfPlayers">The number of players.</param>
         public void Play(int robotId, int mapId, int numberOfPlayers)
         {
-            this.gameModel.Start(robotId, mapId, numberOfPlayers);
+            this.gameModel.Start(robotId, mapId, numberOfPlayers, this.currentUser);
         }
 
         /// <summary>Performing power down - skip last turn.</summary>
