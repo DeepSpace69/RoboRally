@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Photon.SocketServer;
 
+using Roborally.Communication.Data;
 using Roborally.Communication.Data.DataContracts;
 using Roborally.Communication.Data.Operations;
 using Roborally.Communication.ServerInterfaces;
@@ -32,7 +33,7 @@ namespace Roborally.Server.Photon.Tests
         public void Login_RegularParameters_MainServiceWasCalled()
         {
             var parameters = new LoginParameters() { Login = "1", Password = "1" };
-            var request = new OperationRequest(OperationCodes.LoginOperationCode, parameters.ToParameters());
+            var request = new OperationRequest(OperationCodes.LoginOperationCode, parameters.ToDictionary());
             this.repository.Execute(request);
 
             Mock.Assert(() => this.mainService.Login(

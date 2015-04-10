@@ -36,7 +36,7 @@ namespace Roborally.Server.Photon.Services
             //var mapper = ObjectMapperManager.DefaultInstance.GetMapper<ICurrentGameInfo, PhotonCurrentGameInfo>();
             //var result = mapper.Map(gameInfo);
 
-            var response = new OperationResponse(operationRequest.OperationCode, gameInfo.ToPhotonParameters());
+            var response = new OperationResponse(operationRequest.OperationCode, gameInfo.ToXmlPhotonParameters());
             return response;
         }
     }

@@ -36,17 +36,39 @@ namespace Roborally.Communication.Data
         /// <summary>Serialize object to photon parameters.</summary>
         /// <param name="toSerialize">Object to serialize.</param>
         /// <returns>Parameters to send.</returns>
-        public static Dictionary<byte, object> ToPhotonParameters(this object toSerialize)
+        public static Dictionary<byte, object> ToXmlPhotonParameters(this object toSerialize)
         {
             return new Dictionary<byte, object>() { { 1, SerializeToXml(toSerialize) } };
         }
 
+        public static Dictionary<byte, object> ToDictionary(this object toSerialize)
+        {
+            return ReflectiveMapSerializer.Serialize(toSerialize);
+        }
+
+        public static T Deserialize<T>(this string rawXml)
+        {
+            using (var reader = XmlReader.Create(new StringReader(rawXml)))
+            {
+                var deserializer =
+                    new DataContractSerializer(typeof(T));
+                return (T)deserializer.ReadObject(reader);
+            }
+        }
+
+        public static T Deserialize<T>(this Dictionary<byte, object> dictionary) where T : class
+        {
+            var result = Activator.CreateInstance<T>();
+            ReflectiveMapSerializer.Deserialize(result, dictionary);
+            return result;
+        }
 
         private static Type[] GetAllTypes(object targer)
         {
             var extraTypes = new List<Type>();
 
             var type = targer.GetType();
+            extraTypes.Add(type);
             var properties = type.GetProperties()
                                     .Where(p => p.PropertyType.IsInterface)
                                     .Select(p => p.GetValue(targer, null)).ToList();

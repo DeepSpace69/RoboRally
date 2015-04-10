@@ -30,7 +30,7 @@ namespace Roborally.Server.Photon.Services
         [OperationCodeAttribute(Code = OperationCodes.CreateRobotOperationCode)]
         private OperationResponse CreateRobot(OperationRequest operationRequest)
         {
-            var incoming = new CreateRobotParameters(operationRequest.Parameters);
+            var incoming = operationRequest.Parameters.Deserialize<CreateRobotParameters>();
             this.mainService.CreateRobot(Convert.ToInt32(incoming.ModelId), incoming.Name);
             var response = new OperationResponse(operationRequest.OperationCode);
             return response;
@@ -39,7 +39,7 @@ namespace Roborally.Server.Photon.Services
         [OperationCodeAttribute(Code = OperationCodes.LoginOperationCode)]
         private OperationResponse Login(OperationRequest operationRequest)
         {
-            var incoming = new LoginParameters(operationRequest.Parameters);
+            var incoming = operationRequest.Parameters.Deserialize<LoginParameters>();
             var user = this.mainService.Login(incoming.Login, incoming.Password);
 
             PhotonUser photonUser;
@@ -52,7 +52,7 @@ namespace Roborally.Server.Photon.Services
                 photonUser = new PhotonUser() { ID = 0, Name = string.Empty };
             }
 
-            var response = new OperationResponse(operationRequest.OperationCode, photonUser.ToParameters());
+            var response = new OperationResponse(operationRequest.OperationCode, photonUser.ToDictionary());
             return response;
         }
 
@@ -62,7 +62,7 @@ namespace Roborally.Server.Photon.Services
             var myRobots = this.mainService.GetMyRobots();
             var mapper = ObjectMapperManager.DefaultInstance.GetMapper<IRobot, PhotonRobot>();
             var listToSerialize = myRobots.Select(mapper.Map).ToList();
-            var response = new OperationResponse(operationRequest.OperationCode, listToSerialize.ToPhotonParameters());
+            var response = new OperationResponse(operationRequest.OperationCode, listToSerialize.ToXmlPhotonParameters());
             return response;
         }
 
@@ -72,7 +72,7 @@ namespace Roborally.Server.Photon.Services
             var maps = this.mainService.GetMaps();
             var mapper = ObjectMapperManager.DefaultInstance.GetMapper<IMap, PhotonMap>();
             var listToSerialize = maps.Select(mapper.Map).ToList();
-            var response = new OperationResponse(operationRequest.OperationCode, listToSerialize.ToPhotonParameters());
+            var response = new OperationResponse(operationRequest.OperationCode, listToSerialize.ToXmlPhotonParameters());
             return response;
         }
 
@@ -82,14 +82,14 @@ namespace Roborally.Server.Photon.Services
             var models = this.mainService.GetRobotsModels();
             var mapper = ObjectMapperManager.DefaultInstance.GetMapper<IRobotsModel, PhotonRobotModel>();
             var listToSerialize = models.Select(mapper.Map).ToList();
-            var response = new OperationResponse(operationRequest.OperationCode, listToSerialize.ToPhotonParameters());
+            var response = new OperationResponse(operationRequest.OperationCode, listToSerialize.ToXmlPhotonParameters());
             return response;
         }
 
         [OperationCodeAttribute(Code = OperationCodes.StartGameOperationCode)]
         private OperationResponse StartGame(OperationRequest operationRequest)
         {
-            var incoming = new StartGameParameters(operationRequest.Parameters);
+            var incoming = operationRequest.Parameters.Deserialize<StartGameParameters>();
             this.mainService.Play(incoming.RobotId, incoming.MapId, incoming.NumberOfPlayers);
             var response = new OperationResponse(operationRequest.OperationCode);
             return response;

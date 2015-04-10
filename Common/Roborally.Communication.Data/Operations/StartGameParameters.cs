@@ -4,20 +4,8 @@ using System.Collections.Generic;
 
 namespace Roborally.Communication.Data.DataContracts
 {
-    public class StartGameParameters : SerializableMapBase
-    {
-        /// <summary>Initializes a new instance of the <see cref="StartGameParameters"/> class.</summary>
-        public StartGameParameters()
-        {            
-        }
-
-        /// <summary>Initializes a new instance of the <see cref="StartGameParameters"/> class.</summary>
-        /// <param name="parameters">The parameters.</param>
-        public StartGameParameters(Dictionary<byte, object> parameters)
-            : base(parameters)
-        {
-        }
-
+    public class StartGameParameters
+    {       
         [DataField(Code = 101, IsOptional = false)]
         public int RobotId { get; set; }
 
