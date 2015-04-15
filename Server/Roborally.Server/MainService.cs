@@ -82,6 +82,8 @@ namespace Roborally.Server
         {
             // TODO эксепшен должен кидаться самим менеджером
             IUser result = loginManager.Login(login, password);
+            
+            // TODO необходимость таких приведений говорит о неправильном проектировании. Подробные пояснения в классе GameModel
             this.currentUser = result as User; //так можно?
             if (result == null)
             {
