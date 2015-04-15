@@ -9,10 +9,15 @@ namespace Roborally.Server
 {
    public class Register:IRegister
     {
-       public string ID { get; set; }
+       public Register(int id)
+       {
+           this.ID = id;
+       }
+
+       public int ID { get; set; }
 
        public IOrderCard Content { get; set; }
 
-        public bool IsAvailable { get; set; }
+       public bool IsAvailable { get; set; }
     }
 }

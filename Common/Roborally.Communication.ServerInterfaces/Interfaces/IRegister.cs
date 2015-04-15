@@ -8,7 +8,7 @@ namespace Roborally.Communication.ServerInterfaces
         /// <summary>
         /// Register identifier (number)
         /// </summary>
-        string ID { get; }
+        int ID { get; }
 
         /// <summary>Gets the content.</summary>
         IOrderCard Content { get; set; }

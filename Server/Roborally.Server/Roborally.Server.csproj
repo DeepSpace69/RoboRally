@@ -45,6 +45,7 @@
     <Compile Include="BoardObjects\GameRobot.cs" />
     <Compile Include="CurrentGameInfo.cs" />
     <Compile Include="GameModel.cs" />
+    <Compile Include="GameUser.cs" />
     <Compile Include="LoginManager.cs" />
     <Compile Include="MainService.cs" />
     <Compile Include="Map.cs" />
