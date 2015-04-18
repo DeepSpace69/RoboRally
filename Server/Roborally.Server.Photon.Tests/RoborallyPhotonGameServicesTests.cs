@@ -58,39 +58,7 @@ namespace Roborally.Server.Photon.Tests
 
         private IEnumerable<IRegister> CreateRegisters()
         {
-            var registers = new List<Register>()
-                                {
-                                    new Register()
-                                        {
-                                            Content =
-                                                new PhotonOrderCard()
-                                                    {
-                                                        Energy = 11,
-                                                        ID = "1",
-                                                        Speed = 1,
-                                                        Type = MoveDirectionEnum.TurnLeft
-                                                    },
-                                            ID = "123",
-                                            IsAvailable = true
-                                        },
-                                        new Register()
-                                        {
-                                            Content =
-                                                new PhotonOrderCard()
-                                                    {
-                                                        Energy = 11,
-                                                        ID = "1",
-                                                        Speed = 1,
-                                                        Type = MoveDirectionEnum.TurnLeft
-                                                    },
-                                            ID = "456",
-                                            IsAvailable = true
-                                        }
-                                };
-
-
-
-            return registers;
+            return null;
         }
 
         private IEnumerable<IGameRobot> CreateRobots()

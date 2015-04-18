@@ -9,7 +9,7 @@ namespace Roborally.Communication.Data.DataContracts
 {
     public class PhotonRegister : IRegister
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         public IOrderCard Content { get; set; }
 

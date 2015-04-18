@@ -20,17 +20,14 @@ namespace Roborally.Server
 
         public IBoard Board { get; set; }
         public GameStateEnum CurrentState { get; set; }
-        public List<IGameRobot> GameRobots { get; set; }
-        public List<IRegister> Registers { get; set; }
+        public IEnumerable<IGameRobot> GameRobots { get; set; }
+        public IEnumerable<IRegister> Registers { get; set; }
 
 
 
         private void InitRegisters()
         {
-            for (int i = 0; i < 5; i++)
-            {
-                this.Registers.Add(new Register());
-            }
+            
         }
 
         //private void InitPlayers(int numberOfPlayers)

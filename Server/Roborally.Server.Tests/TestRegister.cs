@@ -7,7 +7,7 @@ namespace Roborally.Server.Tests
     /// <summary>The test register.</summary>
     public class TestRegister : IRegister
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         public IOrderCard Content { get; set; }
 

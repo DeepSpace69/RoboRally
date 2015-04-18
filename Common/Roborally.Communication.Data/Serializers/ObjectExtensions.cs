@@ -52,7 +52,8 @@ namespace Roborally.Communication.Data
             {
                 var deserializer =
                     new DataContractSerializer(typeof(T));
-                return (T)deserializer.ReadObject(reader);
+                var result = (T)deserializer.ReadObject(reader);
+                return result;
             }
         }
 

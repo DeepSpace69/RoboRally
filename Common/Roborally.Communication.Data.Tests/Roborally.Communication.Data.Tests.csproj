@@ -60,6 +60,10 @@
       <Project>{8f0480cb-c2d8-4eab-b7ea-88a9903661f4}</Project>
       <Name>Roborally.Communication.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Roborally.Communication.ServerInterfaces\Roborally.Communication.ServerInterfaces.csproj">
+      <Project>{F9C0421A-0BE9-46A2-A22E-3AC9889A9D2B}</Project>
+      <Name>Roborally.Communication.ServerInterfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -8,28 +8,33 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.Data.dll (this message is harmless)
-Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.Data.dll into Unity Child Domain
+Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\eDriven.Audio.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\eDriven.Audio.dll into Unity Child Domain
+Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\eDriven.Core.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\eDriven.Core.dll into Unity Child Domain
+Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\eDriven.Networking.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\eDriven.Networking.dll into Unity Child Domain
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.ServerInterfaces.dll (this message is harmless)
 Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.ServerInterfaces.dll into Unity Child Domain
-- Completed reload, in  0.227 seconds
+Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.Data.dll (this message is harmless)
+Loading C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\Roborally.Communication.Data.dll into Unity Child Domain
+- Completed reload, in  0.065 seconds
 desktop: 1440x900 60Hz; virtual: 3360x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\System.dll (this message is harmless)
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.657046 ms
+eDriven framework: instantiated [eDriven.Core 1.0.2]
+[by Danko Kozar, (C) Copyright (c) 2012 Danko Kozar, edriven.dankokozar.com]
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 311.
-Total: 0.321239 ms (FindLiveObjects: 0.030578 ms CreateObjectMapping: 0.024660 ms MarkObjects: 0.256136 ms  DeleteObjects: 0.009206 ms)
-
+Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\System.Xml.dll (this message is harmless)
+Platform assembly: C:\Work\Git\RoboRally\Client\RoborallyUnityClient\RoborallyClient_Data\Managed\System.Runtime.Serialization.dll (this message is harmless)

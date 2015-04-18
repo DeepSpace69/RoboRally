@@ -8,4 +8,5 @@ using Roborally.Communication.Data.DataContracts;
 /// <summary>The photon server.</summary>
 public partial class PhotonServer
 {
+    
 }

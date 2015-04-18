@@ -72,17 +72,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Helpers\PhotonPeerExtensions.cs" />
+    <Compile Include="Assets\OnOpened.cs" />
+    <Compile Include="Assets\Scripts\GameObjectRepository.cs" />
     <Compile Include="Assets\Scripts\MainBoard\BoardBuilder.cs" />
     <Compile Include="Assets\Scripts\MainBoard\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\MainBoard\MoveRobot.cs" />
-    <Compile Include="Assets\Scripts\Menu\CreateRobotMain.cs" />
-    <Compile Include="Assets\Scripts\Menu\MenuSceneScript.cs" />
-    <Compile Include="Assets\Scripts\Menu\MenuScript.cs" />
-    <Compile Include="Assets\Scripts\Menu\ModelSelection.cs" />
+    <Compile Include="Assets\Scripts\Menu\BaseScreenController.cs" />
+    <Compile Include="Assets\Scripts\Menu\CreateRobot\CreateRobotMain.cs" />
+    <Compile Include="Assets\Scripts\Menu\CreateRobot\HighlightRobotsModel.cs" />
+    <Compile Include="Assets\Scripts\Menu\CreateRobot\LoadRobotsModelsScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\CreateRobot\RobotModelSelectorScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\LoginControllerScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuControllerScript.cs" />
     <Compile Include="Assets\Scripts\Menu\RotationScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\ScreenManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\StartNewGame\LoadMyRobotsScript.cs" />
     <Compile Include="Assets\Scripts\Menu\StartNewGame\StartNewGameMainController.cs" />
     <Compile Include="Assets\Scripts\ServerOperations\GameServices.cs" />
     <Compile Include="Assets\Scripts\ServerOperations\MenuServices.cs" />
+    <Compile Include="Assets\Scripts\ServerOperations\OperationHandlers.cs" />
     <Compile Include="Assets\Scripts\ServerOperations\PhotonServer.cs" />
   </ItemGroup>
   <ItemGroup>

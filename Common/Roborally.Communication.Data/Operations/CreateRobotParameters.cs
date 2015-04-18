@@ -10,7 +10,6 @@ namespace Roborally.Communication.Data.DataContracts
         public string Name { get; set; }
 
         [DataField(Code = 102, IsOptional = false)]
-        public string ModelId { get; set; }
+        public int ModelId { get; set; }
     }
-
 }

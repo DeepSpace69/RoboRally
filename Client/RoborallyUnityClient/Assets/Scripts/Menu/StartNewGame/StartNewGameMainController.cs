@@ -3,17 +3,16 @@ using System.Collections;
 
 public class StartNewGameMainController : MonoBehaviour
 {
+    public LoadMyRobotsScript loadScript;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnScreenShowed()
     {
-
+        this.loadScript.LoadMyRobots();
     }
 
     public void OnMapClick()

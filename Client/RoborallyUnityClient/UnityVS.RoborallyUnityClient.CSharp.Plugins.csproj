@@ -7,14 +7,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4D2D6296-A486-0AF1-560B-2A1DD860536E}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.0.0f4</UnityVersion>
@@ -75,20 +77,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\ChatApi\ChatChannel.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\ChatClient.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\ChatDisconnectCause.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\ChatEventCode.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\ChatOperationCode.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\ChatParameterCode.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\ChatPeer.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\ChatState.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\ChatUserStatus.cs" />
-    <Compile Include="Assets\Plugins\ChatApi\IChatClientListener.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Photon Unity Networking\changelog.txt" />
-    <None Include="Assets\Photon Unity Networking\readme.txt" />
     <None Include="Assets\Plugins\Photon3Unity3D.xml" />
     <None Include="Assets\Plugins\release_history.txt" />
   </ItemGroup>

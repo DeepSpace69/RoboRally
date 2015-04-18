@@ -35,6 +35,7 @@ public partial class PhotonServer : IPhotonPeerListener
     /// <summary>Prevents a default instance of the <see cref="PhotonServer"/> class from being created.</summary>
     private PhotonServer()
     {
+        this.SetupOperationHandlers();
         this.peer = new PhotonPeer(this, ConnectionProtocol.Tcp);
         this.Connect();
 
@@ -99,17 +100,11 @@ public partial class PhotonServer : IPhotonPeerListener
     /// <param name="operationResponse">The operation response.</param>
     public void OnOperationResponse(OperationResponse operationResponse)
     {
-
-        switch (operationResponse.OperationCode)
+        Action<OperationResponse> handler;
+        if (this.operationHandlersDictionary.TryGetValue(operationResponse.OperationCode, out handler))
         {
-            case OperationCodes.LoginOperationCode:
-                this.OnLoginCompleted(operationResponse);
-                break;
-            case OperationCodes.CreateRobotOperationCode:
-                this.OnCreateRobotCompleted(operationResponse);
-                break;
+            handler(operationResponse);
         }
-
     }
 
     /// <summary>The on status changed.</summary>

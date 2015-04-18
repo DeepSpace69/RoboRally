@@ -31,7 +31,7 @@ namespace Roborally.Server.Photon.Services
         private OperationResponse CreateRobot(OperationRequest operationRequest)
         {
             var incoming = operationRequest.Parameters.Deserialize<CreateRobotParameters>();
-            this.mainService.CreateRobot(Convert.ToInt32(incoming.ModelId), incoming.Name);
+            this.mainService.CreateRobot(incoming.ModelId, incoming.Name);
             var response = new OperationResponse(operationRequest.OperationCode);
             return response;
         }
