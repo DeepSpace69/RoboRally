@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using Assets.Helpers;
 using Assets.Scripts;
 
 using Roborally.Communication.Data.DataContracts;
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 
 public class CreateRobotMain : MonoBehaviour
 {
-    private GameObject selectedRobot;
+    public GameObject RobotsPanel;
 
     public InputField RobotNameTextBox;
 
@@ -17,21 +18,20 @@ public class CreateRobotMain : MonoBehaviour
 
     public Animator MainMenu;
 
-    public HighlightRobotsModel highlightRobotsModel;
-
     public void CreateRobot()
     {
+        var selectedRobot = SelectionManager.GetSelectedChild(this.RobotsPanel);
+
+        if (selectedRobot == null)
+        {
+            return;
+        }
+
         PhotonServer.Instance.CreateRobotCompleted += this.OnCreateRobotCompleted;
-        var modelId = GameObjectRepository.Get<PhotonRobotModel>(this.selectedRobot);
+        var modelId = GameObjectRepository.Get<PhotonRobotModel>(selectedRobot);
 
         PhotonServer.Instance.CreateRobot(this.RobotNameTextBox.text, modelId.Id);
-    }
-
-    public void SelectRobot(GameObject selectedRobot)
-    {
-        this.selectedRobot = selectedRobot;
-        highlightRobotsModel.SetSelected(selectedRobot);
-    }
+    }    
 
     private void OnCreateRobotCompleted()
     {

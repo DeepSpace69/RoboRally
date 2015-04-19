@@ -23,11 +23,19 @@ public partial class PhotonServer
     /// <summary>The login completed.</summary>
     public event Action<bool> LoginCompleted;
 
+    /// <summary>The get maps completed.</summary>
+    public event Action<List<PhotonMap>> GetMapsCompleted;
+
+    /// <summary>The start game completed.</summary>
+    public event Action StartGameCompleted;
+
     private void SetupOperationHandlers()
     {
         this.operationHandlersDictionary.Add(OperationCodes.CreateRobotOperationCode, this.OnCreateRobotCompleted);
         this.operationHandlersDictionary.Add(OperationCodes.GetMyRobotsOperationCode, this.OnGetMyRobotsCompleted);
         this.operationHandlersDictionary.Add(OperationCodes.GetRobotsModelsOperationCode, this.OnGetRobotModelsCompleted);
         this.operationHandlersDictionary.Add(OperationCodes.LoginOperationCode, this.OnLoginCompleted);
+        this.operationHandlersDictionary.Add(OperationCodes.GetMapsOperationCode, this.OnGetMapsCompleted);
+        this.operationHandlersDictionary.Add(OperationCodes.StartGameOperationCode, this.OnStartGameCompleted);
     }
 }

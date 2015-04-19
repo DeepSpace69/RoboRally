@@ -1,44 +1,16 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+
+using Assets.Scripts.Menu;
 
 using Roborally.Communication.Data.DataContracts;
 
+using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadMyRobotsScript : MonoBehaviour
+public class LoadMyRobotsScript : BaseObjectLoader
 {
-    public GameObject RobotSelector;
-    public BaseScreenController baseScreenController;
-
-    void Awake()
-    {
-        this.baseScreenController.OnScreenShowed += this.OnScreenShowed;
-        this.baseScreenController.OnScreenHidden += this.OnScreenHidden;
-    }
-
-    private void OnScreenHidden()
-    {
-        this.CleanPanel();
-    }
-
-    private void OnScreenShowed()
-    {
-        this.CleanPanel();
-        this.LoadMyRobots();
-    }
-
-    private void CleanPanel()
-    {
-        for (int i = this.gameObject.transform.childCount - 1; i >= 0; i--)
-        {
-            var robot = this.gameObject.transform.GetChild(i).gameObject;
-            Destroy(robot);
-        }
-    }
-
-    public void LoadMyRobots()
+    public override void LoadObjects()
     {
         PhotonServer.Instance.GetMyRobotsCompleted += this.OnGetMyRobotsCompleted;
         PhotonServer.Instance.GetMyRobots();
@@ -54,11 +26,15 @@ public class LoadMyRobotsScript : MonoBehaviour
     {
         foreach (var robot in robots)
         {
-            var uiRobot = Instantiate(this.RobotSelector);
+            var uiRobot = this.CreateGameObject(robot);
             var textComponent = uiRobot.GetComponentsInChildren<Text>().First();
             textComponent.text = robot.Name;
-            uiRobot.transform.SetParent(this.gameObject.transform);
-            uiRobot.transform.localScale = new Vector3(1, 1, 1);
+
+            var modelPrefab = Resources.Load<GameObject>("RobotModels/RobotModel" + robot.ModelId);
+            var model = Instantiate(modelPrefab);
+            var container = uiRobot.transform.GetChild(0);
+            model.transform.SetParent(container);
+            model.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
 }

@@ -79,4 +79,38 @@ public partial class PhotonServer
             this.GetRobotModelsCompleted(robotModels);
         }
     }
+
+    public void GetMaps()
+    {
+        this.peer.OpCustom(OperationCodes.GetMapsOperationCode);
+    }
+
+    private void OnGetMapsCompleted(OperationResponse operationResponse)
+    {
+        if (this.GetMapsCompleted != null)
+        {
+            var maps = operationResponse.Parameters[1].ToString().Deserialize<List<PhotonMap>>();
+            this.GetMapsCompleted(maps);
+        }
+    }
+
+    public void StartGame(int selectedRobotId, int selectedMapId, int i)
+    {
+        var startGameParameters = new StartGameParameters()
+                                      {
+                                          MapId = selectedMapId,
+                                          NumberOfPlayers = 0,
+                                          RobotId = selectedRobotId
+                                      };
+
+        this.peer.OpCustom(OperationCodes.StartGameOperationCode, startGameParameters.ToDictionary());
+    }
+
+    private void OnStartGameCompleted(OperationResponse operationResponse)
+    {
+        if (this.StartGameCompleted != null)
+        {
+            this.StartGameCompleted();
+        }
+    }
 }

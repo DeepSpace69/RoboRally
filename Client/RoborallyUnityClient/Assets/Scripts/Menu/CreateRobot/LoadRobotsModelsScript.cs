@@ -6,63 +6,37 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Assets.Scripts;
+using Assets.Scripts.Menu;
 
 using UnityEngine.UI;
 
-public class LoadRobotsModelsScript : MonoBehaviour
+public class LoadRobotsModelsScript : BaseObjectLoader
 {
-    public GameObject RobotModelSelector;
-    public BaseScreenController baseScreenController;
-
-    void Awake()
-    {
-        this.baseScreenController.OnScreenShowed += this.OnScreenShowed;
-        this.baseScreenController.OnScreenHidden += this.OnScreenHidden;
-    }
-
-    private void OnScreenHidden()
-    {
-        this.CleanPanel();
-    }
-
-    private void OnScreenShowed()
-    {
-        this.CleanPanel();
-        this.LoadMyRobots();
-    }
-
-    private void CleanPanel()
-    {
-        for (int i = this.gameObject.transform.childCount - 1; i >= 0; i--)
-        {
-            var robot = this.gameObject.transform.GetChild(i).gameObject;
-            Destroy(robot);
-        }
-    }
-
-    public void LoadMyRobots()
+    public override void LoadObjects()
     {
         PhotonServer.Instance.GetRobotModelsCompleted += this.OnGetRobotModelsCompleted;
         PhotonServer.Instance.GetRobotModels();
     }
 
-    private void OnGetRobotModelsCompleted(List<PhotonRobotModel> robots)
+    private void OnGetRobotModelsCompleted(List<PhotonRobotModel> robotModels)
     {
         PhotonServer.Instance.GetRobotModelsCompleted -= this.OnGetRobotModelsCompleted;
-        this.ShowRobots(robots);
+        this.ShowRobotModels(robotModels);
     }
 
-    private void ShowRobots(List<PhotonRobotModel> robotModels)
+    private void ShowRobotModels(List<PhotonRobotModel> robotModels)
     {
         foreach (var robotModel in robotModels)
         {
-            var uiRobot = Instantiate(this.RobotModelSelector);
-            GameObjectRepository.Register(uiRobot, robotModel);
+            var uiRobot = this.CreateGameObject(robotModel);
+            
             var textComponent = uiRobot.GetComponentsInChildren<Text>().First();
             textComponent.text = robotModel.Name;
-
-            uiRobot.transform.SetParent(this.gameObject.transform);
-            uiRobot.transform.localScale = new Vector3(1, 1, 1);
+            var modelPrefab = Resources.Load<GameObject>("RobotModels/RobotModel" + robotModel.Id);
+            var model = Instantiate(modelPrefab);
+            var container = uiRobot.transform.GetChild(0);
+            model.transform.SetParent(container);
+            model.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
 }

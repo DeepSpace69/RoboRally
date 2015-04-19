@@ -47,20 +47,22 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Helpers\PhotonPeerExtensions.cs" />
+     <Compile Include="Assets\Helpers\SelectionManager.cs" />
      <Compile Include="Assets\OnOpened.cs" />
      <Compile Include="Assets\Scripts\GameObjectRepository.cs" />
      <Compile Include="Assets\Scripts\MainBoard\BoardBuilder.cs" />
      <Compile Include="Assets\Scripts\MainBoard\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\MainBoard\MoveRobot.cs" />
+     <Compile Include="Assets\Scripts\Menu\BaseObjectLoader.cs" />
      <Compile Include="Assets\Scripts\Menu\BaseScreenController.cs" />
+     <Compile Include="Assets\Scripts\Menu\Common\SelectorScript.cs" />
      <Compile Include="Assets\Scripts\Menu\CreateRobot\CreateRobotMain.cs" />
-     <Compile Include="Assets\Scripts\Menu\CreateRobot\HighlightRobotsModel.cs" />
      <Compile Include="Assets\Scripts\Menu\CreateRobot\LoadRobotsModelsScript.cs" />
-     <Compile Include="Assets\Scripts\Menu\CreateRobot\RobotModelSelectorScript.cs" />
      <Compile Include="Assets\Scripts\Menu\LoginControllerScript.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuControllerScript.cs" />
      <Compile Include="Assets\Scripts\Menu\RotationScript.cs" />
      <Compile Include="Assets\Scripts\Menu\ScreenManagerScript.cs" />
+     <Compile Include="Assets\Scripts\Menu\StartNewGame\LoadMapsScript.cs" />
      <Compile Include="Assets\Scripts\Menu\StartNewGame\LoadMyRobotsScript.cs" />
      <Compile Include="Assets\Scripts\Menu\StartNewGame\StartNewGameMainController.cs" />
      <Compile Include="Assets\Scripts\ServerOperations\GameServices.cs" />
@@ -84,11 +86,11 @@
  <Reference Include="eDriven.Networking">
  <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/Plugins/eDriven/Libs/eDriven.Networking.dll</HintPath>
  </Reference>
- <Reference Include="Roborally.Communication.ServerInterfaces">
- <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.ServerInterfaces.dll</HintPath>
- </Reference>
  <Reference Include="Roborally.Communication.Data">
  <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="Roborally.Communication.ServerInterfaces">
+ <HintPath>C:/Work/Git/RoboRally/Client/RoborallyUnityClient/Assets/RoborallyCommons/Roborally.Communication.ServerInterfaces.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

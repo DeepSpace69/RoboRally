@@ -1,22 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using Assets.Helpers;
+using Assets.Scripts;
+
+using Roborally.Communication.Data.DataContracts;
+
 public class StartNewGameMainController : MonoBehaviour
 {
-    public LoadMyRobotsScript loadScript;
+    public GameObject MapsPanel;
 
-    // Use this for initialization
-    void Awake()
+    public GameObject RobotsPanel;
+
+    public void StartGame()
     {
+        var selectedRobot = SelectionManager.GetSelectedChild(this.RobotsPanel);
+        if (selectedRobot == null)
+        {
+            return;
+        }
+
+        var selectedMap = SelectionManager.GetSelectedChild(this.MapsPanel);
+        if (selectedMap == null)
+        {
+            return;
+        }
+
+        var selectedRobotId = GameObjectRepository.Get<PhotonRobot>(selectedRobot).Id;
+        var selectedMapId = GameObjectRepository.Get<PhotonMap>(selectedMap).Id;
+
+        PhotonServer.Instance.StartGameCompleted += this.OnStartGameCompleted;
+        PhotonServer.Instance.StartGame(selectedRobotId, selectedMapId, 0);
     }
 
-    private void OnScreenShowed()
+    private void OnStartGameCompleted()
     {
-        this.loadScript.LoadMyRobots();
-    }
-
-    public void OnMapClick()
-    {
-        Debug.Log("OK");
+        Application.LoadLevel("GameScene");
     }
 }

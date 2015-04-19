@@ -90,7 +90,14 @@ namespace Roborally.Server.Photon.Services
         private OperationResponse StartGame(OperationRequest operationRequest)
         {
             var incoming = operationRequest.Parameters.Deserialize<StartGameParameters>();
-            this.mainService.Play(incoming.RobotId, incoming.MapId, incoming.NumberOfPlayers);
+            try
+            {
+                this.mainService.Play(incoming.RobotId, incoming.MapId, incoming.NumberOfPlayers);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
             var response = new OperationResponse(operationRequest.OperationCode);
             return response;
         }
