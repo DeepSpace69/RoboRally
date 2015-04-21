@@ -24,6 +24,7 @@ namespace Roborally.Server.Photon.Tests
         [TestInitialize]
         public void Init()
         {
+            
             this.mainService = Mock.Create<IMainService>();
             this.repository = new RoborallyPhotonServiceRepository();
             var service = new RoborallyPhotonMenuServices(this.repository, this.mainService);

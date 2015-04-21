@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Photon.SocketServer;
 
 using Roborally.Communication.Data;
 using Roborally.Communication.Data.DataContracts;
-using Roborally.Communication.Data.DataContracts.BoardObjects;
 using Roborally.Communication.Data.Operations;
 using Roborally.Communication.ServerInterfaces;
-using Roborally.Server.BoardObjects;
-using Roborally.Server.Photon.Interfaces;
 using Roborally.Server.Photon.Services;
-
-using Telerik.JustMock;
+using Roborally.Server.TestClass.Mocks;
 
 namespace Roborally.Server.Photon.Tests
 {
@@ -22,86 +16,29 @@ namespace Roborally.Server.Photon.Tests
     public class RoborallyPhotonGameServicesTests
     {
         private IMainService mainService;
-
-        private IServiceRepository repository;
+        private RoborallyPhotonServiceRepository repository;
 
         [TestInitialize]
         public void Init()
         {
-            this.mainService = Mock.Create<IMainService>();
+            this.mainService = new MainServiceMock();
             this.repository = new RoborallyPhotonServiceRepository();
             var service = new RoborallyPhotonGameServices(this.repository, this.mainService);
-        }
+        }       
 
         [TestMethod]
         public void GetCurrentGameInfo_MainServiceWasCalled()
-        {
-            var gameInfo = this.CreateCurrentGameInfo();
+        {            
+            var currentGameInfo = this.mainService.GetCurrentGameInfo();
 
-            Mock.Arrange(() => this.mainService.GetCurrentGameInfo()).Returns(gameInfo);
-            var request = new OperationRequest(OperationCodes.GetCurrentGameInfoOperationCode);
-            var response = this.repository.Execute(request);
+            var response = this.repository.Execute(new OperationRequest(OperationCodes.GetCurrentGameInfoOperationCode));
+            var actualString = response.Parameters[1].ToString();
+            var actual = actualString.Deserialize<PhotonCurrentGameInfo>();
 
-            Mock.Assert(() => this.mainService.GetCurrentGameInfo());
-        }
-
-        private PhotonCurrentGameInfo CreateCurrentGameInfo()
-        {
-            var gameInfo = new PhotonCurrentGameInfo();
-            gameInfo.Board = this.CreateBoard();
-            gameInfo.CurrentState = GameStateEnum.DrawCards;
-            gameInfo.GameRobots = this.CreateRobots();
-            gameInfo.Registers = this.CreateRegisters();
-
-            return gameInfo;
-        }
-
-        private IEnumerable<IRegister> CreateRegisters()
-        {
-            return null;
-        }
-
-        private IEnumerable<IGameRobot> CreateRobots()
-        {
-            var result = new List<PhotonGameRobot>()
-                             {
-                                 new PhotonGameRobot()
-                                     {
-                                         CurrentDirection = DirectionEnum.Down,
-                                         HealthPoint = 11,
-                                         IsPowerDown = false,
-                                         LifeAmount = 2,
-                                         Name = "Terminator",
-                                         Position = new PhotonPosition() { X = 0, Y = 0 },
-                                         RobotId = 1,
-                                         RobotsModel = new PhotonRobotModel() { Id = 1, Name = "Tank" }
-                                     },
-                                     new PhotonGameRobot()
-                                     {
-                                         CurrentDirection = DirectionEnum.Down,
-                                         HealthPoint = 11,
-                                         IsPowerDown = false,
-                                         LifeAmount = 2,
-                                         Name = "Terminator2",
-                                         Position = new PhotonPosition() { X = 1, Y = 1 },
-                                         RobotId = 2,
-                                         RobotsModel = new PhotonRobotModel() { Id = 1, Name = "Tank2" }
-                                     },
-                             };
-            return result;
-        }
-
-        private IBoard CreateBoard()
-        {
-            var board = new PhotonBoard();
-            board.BoardObjects = new List<PhotonEmptyCell>()
-                                     {
-                                         new PhotonEmptyCell() { Position = new PhotonPosition() { X = 0, Y = 0 } },
-                                         new PhotonEmptyCell() { Position = new PhotonPosition() { X = 1, Y = 0 } },
-                                         new PhotonEmptyCell() { Position = new PhotonPosition() { X = 2, Y = 0 } }
-                                     };
-            board.Map = new PhotonMap() { Id = 1, Name = "Hell" };
-            return board;
+            Assert.AreEqual(currentGameInfo.CurrentState, actual.CurrentState);
+            Assert.AreEqual(currentGameInfo.GameRobots.Count(), actual.GameRobots.Count());
+            Assert.AreEqual(currentGameInfo.Registers.Count(), actual.Registers.Count());
+            Assert.AreEqual(currentGameInfo.Board.BoardObjects.Count(), actual.Board.BoardObjects.Count());
         }
     }
 }

@@ -72,6 +72,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\Roborally.Communication.Data.Tests\Roborally.Communication.Data.Tests.csproj">
+      <Project>{3557e31e-282f-4e80-a206-c64ee9f8217c}</Project>
+      <Name>Roborally.Communication.Data.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\Roborally.Communication.Data\Roborally.Communication.Data.csproj">
       <Project>{8F0480CB-C2D8-4EAB-B7EA-88A9903661F4}</Project>
       <Name>Roborally.Communication.Data</Name>

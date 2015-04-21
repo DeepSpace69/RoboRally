@@ -2,6 +2,7 @@
 
 using Roborally.Server.Photon.Interfaces;
 using Roborally.Server.Photon.Services;
+using Roborally.Server.TestClass.Mocks;
 
 namespace Roborally.Server.Photon
 {
@@ -23,7 +24,7 @@ namespace Roborally.Server.Photon
 
         private void CreateServices(IServiceRepository repository)
         {
-            var mainService = new MainService();
+            var mainService = new MainServiceMock();
             var menuService = new RoborallyPhotonMenuServices(repository, mainService);
             var gameService = new RoborallyPhotonGameServices(repository, mainService);
         }

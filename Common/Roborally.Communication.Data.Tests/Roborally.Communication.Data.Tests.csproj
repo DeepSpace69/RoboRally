@@ -52,9 +52,19 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseTestClass.cs" />
+    <Compile Include="DataContracts\BoardObjects\PhotonEmptyCell.cs" />
+    <Compile Include="DataContracts\BoardObjects\PhotonGameRobot.cs" />
+    <Compile Include="DataContracts\PhotonBoard.cs" />
+    <Compile Include="DataContracts\PhotonCurrentGameInfo.cs" />
+    <Compile Include="DataContracts\PhotonMap.cs" />
+    <Compile Include="DataContracts\PhotonOrderCard.cs" />
+    <Compile Include="DataContracts\PhotonPosition.cs" />
+    <Compile Include="DataContracts\PhotonRegister.cs" />
+    <Compile Include="DataContracts\PhotonRobot.cs" />
+    <Compile Include="DataContracts\PhotonRobotModel.cs" />
+    <Compile Include="DataContracts\PhotonUser.cs" />
     <Compile Include="Serializers\ObjectExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serializers\PhotonCurrentGameInfoSerializationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Roborally.Communication.Data\Roborally.Communication.Data.csproj">

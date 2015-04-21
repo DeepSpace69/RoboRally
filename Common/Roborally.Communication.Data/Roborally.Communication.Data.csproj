@@ -43,7 +43,7 @@
     <Compile Include="DataContracts\BoardObjects\PhotonEmptyCell.cs" />
     <Compile Include="DataContracts\PhotonBoard.cs" />
     <Compile Include="DataContracts\PhotonCurrentGameInfo.cs" />
-    <Compile Include="DataContracts\PhotonGameRobot.cs" />
+    <Compile Include="DataContracts\BoardObjects\PhotonGameRobot.cs" />
     <Compile Include="DataContracts\PhotonMap.cs" />
     <Compile Include="DataContracts\PhotonOrderCard.cs" />
     <Compile Include="DataContracts\PhotonPosition.cs" />
