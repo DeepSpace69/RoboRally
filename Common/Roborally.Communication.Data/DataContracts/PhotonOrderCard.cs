@@ -8,19 +8,19 @@ using Roborally.Communication.ServerInterfaces;
 
 namespace Roborally.Communication.Data.DataContracts
 {
-    [DataContract]
-    public class PhotonOrderCard:IOrderCard
+    [DataContract(Namespace = "http://schemas.datacontract.org/2004/07/Roborally.Communication.ServerInterfaces")]
+    public class PhotonOrderCard : IOrderCard
     {
         [DataMember]
-        public string ID { get;  set; }
+        public string ID { get; set; }
 
         [DataMember]
-        public int Energy { get;  set; }
+        public int Energy { get; set; }
 
         [DataMember]
-        public int Speed { get;  set; }
+        public int Speed { get; set; }
 
         [DataMember]
-        public MoveDirectionEnum Type { get;  set; }
+        public MoveDirectionEnum Type { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Roborally.Server
         }
 
         private int idCounter;
-        private ICollection<IMap> MapsDatabase { get; set; }
+        private IList<IMap> MapsDatabase { get; set; }
 
         /// <summary>Gets the instance.</summary>
         public static MapManager Instance
@@ -36,8 +36,8 @@ namespace Roborally.Server
         }
 
         /// <summary>The get all robot models.</summary>
-        /// <returns>The <see cref="IEnumerable"/>.</returns>
-        public IEnumerable<IMap> GetAllMaps()
+        /// <returns>The <see cref="IList"/>.</returns>
+        public IList<IMap> GetAllMaps()
         {
             return this.MapsDatabase;
         }

@@ -7,8 +7,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Roborally.Communication.Data.Tests.Serializers
 {
-    using Roborally.Communication.Data.DataContracts;
-
     [TestClass]
     public class ObjectExtensionsTests
     {
@@ -67,7 +65,11 @@ namespace Roborally.Communication.Data.Tests.Serializers
 
             var actual = target[1].ToString().Deserialize<List<BaseTestClass>>();
 
-            CollectionAssert.AreEquivalent(test, actual);
+            Assert.AreEqual(2, actual.Count);
+            Assert.AreEqual(1, actual[0].IntProperty);
+            Assert.AreEqual(2, actual[1].IntProperty);
+            Assert.AreEqual("1", actual[0].StringProperty);
+            Assert.AreEqual("2", actual[1].StringProperty);
         }
     }
 }

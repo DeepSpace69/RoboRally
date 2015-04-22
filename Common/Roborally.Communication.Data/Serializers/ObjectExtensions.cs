@@ -8,6 +8,12 @@ using System.Xml;
 
 namespace Roborally.Communication.Data
 {
+    using System.CodeDom;
+    using System.Collections.ObjectModel;
+    using System.Reflection;
+
+    using Roborally.Communication.ServerInterfaces;
+
     /// <summary>
     /// Extension methods for <see cref="Object"/>
     /// </summary>
@@ -68,6 +74,6 @@ namespace Roborally.Communication.Data
             var result = Activator.CreateInstance<T>();
             ReflectiveMapSerializer.Deserialize(result, dictionary);
             return result;
-        }
+        }      
     }
 }

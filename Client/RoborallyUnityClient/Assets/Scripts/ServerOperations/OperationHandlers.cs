@@ -29,6 +29,9 @@ public partial class PhotonServer
     /// <summary>The start game completed.</summary>
     public event Action StartGameCompleted;
 
+    /// <summary>The get current game info completed.</summary>
+    public event Action<PhotonCurrentGameInfo> GetCurrentGameInfoCompleted;
+
     private void SetupOperationHandlers()
     {
         this.operationHandlersDictionary.Add(OperationCodes.CreateRobotOperationCode, this.OnCreateRobotCompleted);
@@ -37,5 +40,6 @@ public partial class PhotonServer
         this.operationHandlersDictionary.Add(OperationCodes.LoginOperationCode, this.OnLoginCompleted);
         this.operationHandlersDictionary.Add(OperationCodes.GetMapsOperationCode, this.OnGetMapsCompleted);
         this.operationHandlersDictionary.Add(OperationCodes.StartGameOperationCode, this.OnStartGameCompleted);
+        this.operationHandlersDictionary.Add(OperationCodes.GetCurrentGameInfoOperationCode, this.OnGetCurrentGameInfo);
     }
 }

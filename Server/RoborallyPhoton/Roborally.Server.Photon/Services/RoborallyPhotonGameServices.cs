@@ -17,6 +17,8 @@ using Roborally.Server.Photon.Interfaces;
 
 namespace Roborally.Server.Photon.Services
 {
+    using Roborally.Communication.Data.Tests.DataContracts.BoardObjects;
+
     /// <summary>The roborally photon menu services.</summary>
     public class RoborallyPhotonGameServices : RoborallyPhotonServicesBase
     {
@@ -59,8 +61,8 @@ namespace Roborally.Server.Photon.Services
             Mapper.CreateMap<IGameRobot, IGameRobot>().As<PhotonGameRobot>();
 
             Mapper.CreateMap<IGameRobot, PhotonGameRobot>();
-
             Mapper.CreateMap<IEmptyCell, PhotonEmptyCell>();
+            Mapper.CreateMap<ILaser, PhotonLaser>();
 
             Mapper.CreateMap<IBoardObject, IBoardObject>()
                   .ConvertUsing<BoardObjectConverter>();
@@ -75,6 +77,7 @@ namespace Roborally.Server.Photon.Services
             {
                 if (source is IEmptyCell) return Mapper.Map<PhotonEmptyCell>(source);
                 if (source is IGameRobot) return Mapper.Map<PhotonGameRobot>(source);
+                if (source is ILaser) return Mapper.Map<PhotonLaser>(source);
                 return null;
             }
         }

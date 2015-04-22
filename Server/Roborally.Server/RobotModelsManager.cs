@@ -17,7 +17,7 @@ namespace Roborally.Server
             this.InitForTest();
         }
 
-        private ICollection<IRobotsModel> RobotModelsDatabase { get; set; }
+        private IList<IRobotsModel> RobotModelsDatabase { get; set; }
 
         /// <summary>Gets the instance.</summary>
         public static RobotModelsManager Instance
@@ -34,8 +34,8 @@ namespace Roborally.Server
         }
 
         /// <summary>The get all robot models.</summary>
-        /// <returns>The <see cref="IEnumerable"/>.</returns>
-        public IEnumerable<IRobotsModel> GetAllRobotModels()
+        /// <returns>The <see cref="IList"/>.</returns>
+        public IList<IRobotsModel> GetAllRobotModels()
         {
             return this.RobotModelsDatabase;
         }

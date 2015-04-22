@@ -9,7 +9,7 @@ namespace Roborally.Server
 {
     public class Board:IBoard
     {
-        public IEnumerable<IBoardObject> BoardObjects { get; set; }
+        public IList<IBoardObject> BoardObjects { get; set; }
 
         public IMap Map { get; set; }
     }

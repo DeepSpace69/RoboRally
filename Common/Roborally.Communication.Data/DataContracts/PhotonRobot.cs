@@ -3,8 +3,8 @@ using Roborally.Communication.ServerInterfaces;
 
 namespace Roborally.Communication.Data.DataContracts
 {
+    [DataContract(Namespace = "http://schemas.datacontract.org/2004/07/Roborally.Communication.ServerInterfaces")]
     /// <summary>The photon robot.</summary>
-    [DataContract]
     public class PhotonRobot : IRobot
     {
         /// <summary>Gets the id.</summary>

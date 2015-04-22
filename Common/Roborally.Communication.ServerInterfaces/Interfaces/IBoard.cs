@@ -8,7 +8,7 @@ namespace Roborally.Communication.ServerInterfaces
         #region Public Properties
 
         /// <summary>Gets the board objects.</summary>
-        IEnumerable<IBoardObject> BoardObjects { get; }
+        IList<IBoardObject> BoardObjects { get; }
 
         /// <summary>Gets the map.</summary>
         IMap Map { get; }

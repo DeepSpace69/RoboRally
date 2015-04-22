@@ -42,7 +42,7 @@ namespace Roborally.Server.Photon.Tests
             Mapper.CreateMap<CurrentGameInfo, PhotonCurrentGameInfo>()
                   .ForMember(
                       dest => dest.GameRobots,
-                      opt => opt.MapFrom(q => Mapper.Map<IEnumerable<IGameRobot>, IEnumerable<PhotonGameRobot>>(q.GameRobots)));
+                      opt => opt.MapFrom(q => Mapper.Map<IList<IGameRobot>, IList<PhotonGameRobot>>(q.GameRobots)));
 
             Mapper.AssertConfigurationIsValid();
             var gameInfo = this.CreateCurrentGameInfo();
@@ -57,9 +57,9 @@ namespace Roborally.Server.Photon.Tests
             return gameInfo;
         }
 
-        private IEnumerable<IGameRobot> CreateRobots()
+        private IList<IGameRobot> CreateRobots()
         {
-            var result = new List<GameRobot>()
+            var result = new List<IGameRobot>()
                              {
                                  new GameRobot()
                                      {

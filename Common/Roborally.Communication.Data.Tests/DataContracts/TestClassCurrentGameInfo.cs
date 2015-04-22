@@ -19,9 +19,9 @@ namespace Roborally.Communication.Data.DataContracts
         public GameStateEnum CurrentState { get; set; }
 
         
-        public IEnumerable<IGameRobot> GameRobots { get; set; }
+        public IList<IGameRobot> GameRobots { get; set; }
 
         
-        public IEnumerable<IRegister> Registers { get; set; }
+        public IList<IRegister> Registers { get; set; }
     }
 }

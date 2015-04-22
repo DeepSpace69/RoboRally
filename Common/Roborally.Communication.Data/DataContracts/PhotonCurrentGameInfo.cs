@@ -10,8 +10,8 @@ using Roborally.Communication.ServerInterfaces;
 namespace Roborally.Communication.Data.DataContracts
 {
     /// <summary>The photon current game info.</summary>
-    [DataContract]
-    public class PhotonCurrentGameInfo
+    [DataContract(Namespace = "http://schemas.datacontract.org/2004/07/Roborally.Communication.ServerInterfaces")]
+    public class PhotonCurrentGameInfo : ICurrentGameInfo
     {
         [DataMember]
         public IBoard Board { get; set; }
@@ -20,9 +20,9 @@ namespace Roborally.Communication.Data.DataContracts
         public GameStateEnum CurrentState { get; set; }
 
         [DataMember]
-        public IEnumerable<IGameRobot> GameRobots { get; set; }
+        public IList<IGameRobot> GameRobots { get; set; }
 
         [DataMember]
-        public IEnumerable<IRegister> Registers { get; set; }
+        public IList<IRegister> Registers { get; set; }
     }
 }

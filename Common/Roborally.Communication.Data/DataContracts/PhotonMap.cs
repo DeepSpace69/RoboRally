@@ -5,7 +5,7 @@ namespace Roborally.Communication.Data.DataContracts
     using System.Runtime.Serialization;
 
     /// <summary>The photon map.</summary>
-    [DataContract]
+   [DataContract(Namespace = "http://schemas.datacontract.org/2004/07/Roborally.Communication.ServerInterfaces")]
     public class PhotonMap : IMap
     {
         /// <summary>Gets the id.</summary>

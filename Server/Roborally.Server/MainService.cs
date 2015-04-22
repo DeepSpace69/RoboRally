@@ -20,7 +20,7 @@ namespace Roborally.Server
 
         /// <summary>Gets information about what happens after performing actions of board objects.</summary>
         /// <param name="robots">The robots with new position and status.</param>
-        public void BoardActions(IEnumerable<IGameRobot> robots)
+        public void BoardActions(IList<IGameRobot> robots)
         {
         }
 
@@ -34,7 +34,7 @@ namespace Roborally.Server
 
         /// <summary>Get cards for current turn.</summary>
         /// <returns>Collection of card for current turn.</returns>
-        public IEnumerable<IOrderCard> GetCards()
+        public IList<IOrderCard> GetCards()
         {
             return null;
         }
@@ -48,28 +48,28 @@ namespace Roborally.Server
 
         /// <summary>Get available maps for playing.</summary>
         /// <returns>Available maps for playing.</returns>
-        public IEnumerable<IMap> GetMaps()
+        public IList<IMap> GetMaps()
         {
            return MapManager.Instance.GetAllMaps();
         }
 
         /// <summary>Get robots of current user, that can play.</summary>
         /// <returns>Robots that can play.</returns>
-        public IEnumerable<IRobot> GetMyRobots()
+        public IList<IRobot> GetMyRobots()
         {
             return RobotsManager.Instance.GetRobots();
         }
 
         /// <summary>Get ratings.</summary>
         /// <returns>Information about race, places, kills, etc.</returns>
-        public IEnumerable<IRating> GetRatings()
+        public IList<IRating> GetRatings()
         {
             return null;
         }
 
         /// <summary>Gets robots models.</summary>
         /// <returns>Available robots models.</returns>
-        public IEnumerable<IRobotsModel> GetRobotsModels()
+        public IList<IRobotsModel> GetRobotsModels()
         {
             return RobotModelsManager.Instance.GetAllRobotModels();
         }
@@ -96,7 +96,7 @@ namespace Roborally.Server
         /// <summary>Gets information about what happens after performing moving robots.</summary>
         /// <param name="robotId">Current players robot id.</param>
         /// <param name="robots">The robots.</param>
-        public void MoveRobots(int robotId, IEnumerable<IGameRobot> robots)
+        public void MoveRobots(int robotId, IList<IGameRobot> robots)
         {
         }
 
@@ -116,7 +116,7 @@ namespace Roborally.Server
 
         /// <summary>Place order cards into registers and send this info on server.</summary>
         /// <param name="registers">The registers with cards.</param>
-        public void SetupRegisters(IEnumerable<IRegister> registers)
+        public void SetupRegisters(IList<IRegister> registers)
         {
         }
 

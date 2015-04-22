@@ -19,7 +19,7 @@ namespace Roborally.Server
         }
 
        private int idCounter;
-        private ICollection<IRobot> RobotsDatabase { get; set; }
+       private IList<IRobot> RobotsDatabase { get; set; }
 
         /// <summary>Gets the instance.</summary>
         public static RobotsManager Instance
@@ -36,8 +36,8 @@ namespace Roborally.Server
         }
 
         /// <summary>The get all robot models.</summary>
-        /// <returns>The <see cref="IEnumerable"/>.</returns>
-        public IEnumerable<IRobot> GetRobots()
+        /// <returns>The <see cref="IList"/>.</returns>
+        public IList<IRobot> GetRobots()
         {
             return this.RobotsDatabase;
         }

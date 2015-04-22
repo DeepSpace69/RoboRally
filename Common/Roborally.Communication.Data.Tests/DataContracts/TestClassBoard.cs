@@ -11,7 +11,7 @@ namespace Roborally.Communication.Data.DataContracts
     public class TestClassBoard : IBoard
     {
         
-        public IEnumerable<IBoardObject> BoardObjects { get; set; }
+        public IList<IBoardObject> BoardObjects { get; set; }
 
         
         public IMap Map { get; set; }

@@ -6,6 +6,8 @@ using Roborally.Communication.ServerInterfaces;
 
 namespace Roborally.Server.TestClass.Mocks
 {
+    using Roborally.Communication.Data.Tests.DataContracts.BoardObjects;
+
     /// <summary>The main service mock.</summary>
     public class MainServiceMock : IMainService
     {
@@ -13,7 +15,7 @@ namespace Roborally.Server.TestClass.Mocks
 
         /// <summary>Gets information about what happens after performing actions of board objects.</summary>
         /// <param name="robots">The robots with new position and status.</param>
-        public void BoardActions(IEnumerable<IGameRobot> robots)
+        public void BoardActions(IList<IGameRobot> robots)
         {
         }
 
@@ -26,9 +28,9 @@ namespace Roborally.Server.TestClass.Mocks
 
         /// <summary>Get cards for current turn.</summary>
         /// <returns>Collection of card for current turn.</returns>
-        public IEnumerable<IOrderCard> GetCards()
+        public IList<IOrderCard> GetCards()
         {
-            yield break;
+            return new List<IOrderCard>();
         }
 
         /// <summary>Get current game info. Call each new turn.</summary>
@@ -40,9 +42,9 @@ namespace Roborally.Server.TestClass.Mocks
 
         /// <summary>Get available maps for playing.</summary>
         /// <returns>Available maps for playing.</returns>
-        public IEnumerable<IMap> GetMaps()
+        public IList<IMap> GetMaps()
         {
-            return new List<TestClassMap>()
+            return new List<IMap>()
                        {
                            new TestClassMap() { Id = 1, Name = "Test map 1" },
                            new TestClassMap() { Id = 2, Name = "Test map 2" }
@@ -51,9 +53,9 @@ namespace Roborally.Server.TestClass.Mocks
 
         /// <summary>Get robots of current user, that can play.</summary>
         /// <returns>Robots that can play.</returns>
-        public IEnumerable<IRobot> GetMyRobots()
+        public IList<IRobot> GetMyRobots()
         {
-            return new List<TestClassRobot>()
+            return new List<IRobot>()
                        {
                            new TestClassRobot() { Id = 1, ModelId = 1, Name = "Test robot 1" },
                            new TestClassRobot() { Id = 2, ModelId = 2, Name = "Test robot 2" },
@@ -62,16 +64,16 @@ namespace Roborally.Server.TestClass.Mocks
 
         /// <summary>Get ratings.</summary>
         /// <returns>Information about race, places, kills, etc.</returns>
-        public IEnumerable<IRating> GetRatings()
+        public IList<IRating> GetRatings()
         {
-            yield break;
+            return new List<IRating>();
         }
 
         /// <summary>Gets robots models.</summary>
         /// <returns>Available robots models.</returns>
-        public IEnumerable<IRobotsModel> GetRobotsModels()
+        public IList<IRobotsModel> GetRobotsModels()
         {
-            return new List<TestClassRobotModel>()
+            return new List<IRobotsModel>()
                        {
                            new TestClassRobotModel() { Id = 1, Name = "Test Model 1" },
                            new TestClassRobotModel() { Id = 2, Name = "Test Model 2" }
@@ -90,7 +92,7 @@ namespace Roborally.Server.TestClass.Mocks
         /// <summary>Gets information about what happens after performing moving robots.</summary>
         /// <param name="robotId">Current players robot id.</param>
         /// <param name="robots">The robots.</param>
-        public void MoveRobots(int robotId, IEnumerable<IGameRobot> robots)
+        public void MoveRobots(int robotId, IList<IGameRobot> robots)
         {
         }
 
@@ -109,7 +111,7 @@ namespace Roborally.Server.TestClass.Mocks
 
         /// <summary>Place order cards into registers and send this info on server.</summary>
         /// <param name="registers">The registers with cards.</param>
-        public void SetupRegisters(IEnumerable<IRegister> registers)
+        public void SetupRegisters(IList<IRegister> registers)
         {
         }
 
@@ -134,7 +136,7 @@ namespace Roborally.Server.TestClass.Mocks
             return result;
         }
 
-        private IEnumerable<IRegister> CreateRegisters()
+        private IList<IRegister> CreateRegisters()
         {
             var register1 = new TestClassRegister();
             register1.ID = 1;
@@ -158,11 +160,11 @@ namespace Roborally.Server.TestClass.Mocks
             register5.ID = 5;
             register5.IsAvailable = true;
 
-            var result = new List<TestClassRegister>() { register1, register2, register3, register4, register5 };
+            var result = new List<IRegister>() { register1, register2, register3, register4, register5 };
             return result;
         }
 
-        private IEnumerable<IGameRobot> CreateRobots()
+        private IList<IGameRobot> CreateRobots()
         {
             var robot = new TestClassGameRobot();
             robot.CurrentDirection = DirectionEnum.Up;
@@ -173,7 +175,7 @@ namespace Roborally.Server.TestClass.Mocks
             robot.Position = new TestClassPosition() { X = 1, Y = 2 };
             robot.RobotId = 1;
             robot.RobotsModel = new TestClassRobotModel() { Id = 1, Name = "TerminatorRobotModel" };
-            var result = new List<TestClassGameRobot>() { robot };
+            var result = new List<IGameRobot>() { robot };
             return result;
         }
 
@@ -190,7 +192,8 @@ namespace Roborally.Server.TestClass.Mocks
                                           new TestClassEmptyCell() { Position = new TestClassPosition() { X = 2, Y = 1 } },
                                           new TestClassEmptyCell() { Position = new TestClassPosition() { X = 0, Y = 2 } },
                                           new TestClassEmptyCell() { Position = new TestClassPosition() { X = 1, Y = 2 } },
-                                          new TestClassEmptyCell() { Position = new TestClassPosition() { X = 2, Y = 2 } }
+                                          new TestClassEmptyCell() { Position = new TestClassPosition() { X = 2, Y = 2 } },
+                                          new TestClassLaser() { Position = new TestClassPosition() { X = 1, Y = 3 }, Power = 5 }
                                       };
             return result;
         }

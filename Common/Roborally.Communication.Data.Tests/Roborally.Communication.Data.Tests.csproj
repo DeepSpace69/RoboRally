@@ -52,17 +52,18 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseTestClass.cs" />
-    <Compile Include="DataContracts\BoardObjects\PhotonEmptyCell.cs" />
-    <Compile Include="DataContracts\BoardObjects\PhotonGameRobot.cs" />
-    <Compile Include="DataContracts\PhotonBoard.cs" />
-    <Compile Include="DataContracts\PhotonCurrentGameInfo.cs" />
-    <Compile Include="DataContracts\PhotonMap.cs" />
-    <Compile Include="DataContracts\PhotonOrderCard.cs" />
-    <Compile Include="DataContracts\PhotonPosition.cs" />
-    <Compile Include="DataContracts\PhotonRegister.cs" />
-    <Compile Include="DataContracts\PhotonRobot.cs" />
-    <Compile Include="DataContracts\PhotonRobotModel.cs" />
-    <Compile Include="DataContracts\PhotonUser.cs" />
+    <Compile Include="DataContracts\BoardObjects\TestClassEmptyCell.cs" />
+    <Compile Include="DataContracts\BoardObjects\TestClassGameRobot.cs" />
+    <Compile Include="DataContracts\BoardObjects\TestClassLaser.cs" />
+    <Compile Include="DataContracts\TestClassBoard.cs" />
+    <Compile Include="DataContracts\TestClassCurrentGameInfo.cs" />
+    <Compile Include="DataContracts\TestClassMap.cs" />
+    <Compile Include="DataContracts\TestClassOrderCard.cs" />
+    <Compile Include="DataContracts\TestClassPosition.cs" />
+    <Compile Include="DataContracts\TestClassRegister.cs" />
+    <Compile Include="DataContracts\TestClassRobot.cs" />
+    <Compile Include="DataContracts\TestClassRobotModel.cs" />
+    <Compile Include="DataContracts\TestClassUser.cs" />
     <Compile Include="Serializers\ObjectExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
